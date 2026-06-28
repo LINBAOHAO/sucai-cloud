@@ -1,0 +1,391 @@
+{
+  "metadata": {
+    "title": "SuCai Cloud - Platform Pengadaan Perlengkapan Industri Terpadu",
+    "description": "Menghubungkan pemasok China dengan perusahaan Indonesia untuk hardware, listrik, APD, perkakas, pipa, katup, bearing, dan lainnya"
+  },
+  "nav": {
+    "home": "Beranda",
+    "products": "Produk",
+    "brands": "Merek",
+    "about": "Tentang Kami",
+    "contact": "Kontak",
+    "login": "Masuk",
+    "register": "Daftar",
+    "language": "Bahasa",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Halo, saya ingin bertanya tentang pengadaan perlengkapan industri. Bisakah Anda membantu?"
+  },
+  "hero": {
+    "badge": "Platform Pengadaan Industri B2B",
+    "title": "Platform Pengadaan Perlengkapan Industri Terpadu",
+    "subtitle": "Menghubungkan Pemasok China dengan Pengadaan Perusahaan Indonesia",
+    "ctaPrimary": "Mulai Belanja",
+    "ctaSecondary": "Jadi Pemasok",
+    "stats": {
+      "suppliers": "Pemasok Terverifikasi",
+      "products": "SKU Produk",
+      "countries": "Negara Dilayani",
+      "orders": "Pesanan Sukses"
+    }
+  },
+  "search": {
+    "title": "Pencarian Cerdas AI",
+    "subtitle": "Temukan perlengkapan industri yang Anda butuhkan dengan cepat",
+    "placeholder": "Masukkan nama produk, mis: gerinda, sepatu safety, kabel...",
+    "button": "Cari",
+    "hotLabel": "Pencarian populer:",
+    "tags": {
+      "angleGrinder": "Gerinda",
+      "generator": "Generator",
+      "safetySupplies": "Perlengkapan APD",
+      "cable": "Kabel",
+      "valve": "Katup",
+      "bearing": "Bearing"
+    }
+  },
+  "categories": {
+    "title": "Kategori Populer",
+    "subtitle": "Perlengkapan industri lengkap — jelajahi berdasarkan kategori",
+    "viewAll": "Lihat Semua Kategori",
+    "explore": "Jelajahi",
+    "items": {
+      "hardware-tools": { "name": "Hardware & Perkakas", "desc": "Perkakas tangan, listrik, alat ukur" },
+      "electrical": { "name": "Listrik & Elektrik", "desc": "Komponen, saklar, kabel, distribusi" },
+      "safety": { "name": "Perlengkapan APD", "desc": "Perlindungan keselamatan, APD" },
+      "pipes": { "name": "Pipa & Fitting", "desc": "Pipa, fitting, flange, selang" },
+      "valves": { "name": "Katup", "desc": "Katup bola, gate, kupu-kupu, check" },
+      "bearings": { "name": "Bearing", "desc": "Bearing gelinding, coupling" },
+      "consumables": { "name": "Bahan Habis Pakai", "desc": "Cairan potong, grease, roda gerinda" },
+      "logistics": { "name": "Gudang & Logistik", "desc": "Rak, palet, peralatan handling" }
+    }
+  },
+  "hotProducts": {
+    "title": "Produk Populer",
+    "subtitle": "Pilihan utama perusahaan Indonesia — dukung permintaan penawaran massal",
+    "viewAll": "Lihat Produk Lainnya",
+    "model": "Model",
+    "brand": "Merek",
+    "hot": "Populer",
+    "inquiry": "Minta Penawaran",
+    "items": {
+      "1": { "name": "Gerinda Sudut Industri", "model": "GWS 750-100", "brand": "BOSCH" },
+      "2": { "name": "Genset Diesel", "model": "GF-20KW", "brand": "CUMMINS" },
+      "3": { "name": "Sepatu Safety", "model": "GB21148-2020", "brand": "Honeywell" },
+      "4": { "name": "Kabel Tembaga", "model": "YJV-3×95+2×50", "brand": "Far East Cable" },
+      "5": { "name": "Miniature Circuit Breaker", "model": "DZ47-63 C32", "brand": "Delixi" },
+      "6": { "name": "Katup Gate Cast Steel", "model": "Z41H-16C DN80", "brand": "Shanghai Lianggong" },
+      "7": { "name": "Bearing Deep Groove", "model": "6205-2RS", "brand": "SKF" },
+      "8": { "name": "Grease Industri", "model": "LGMT 2/0.4", "brand": "SKF" }
+    }
+  },
+  "brands": {
+    "title": "Merek Rekomendasi",
+    "subtitle": "Merek terkenal global, produk asli terjamin",
+    "viewAll": "Lihat Semua Merek"
+  },
+  "advantages": {
+    "title": "Keunggulan Kami",
+    "subtitle": "Layanan pengadaan industri B2B profesional untuk mengurangi biaya dan meningkatkan efisiensi",
+    "items": {
+      "quality": {
+        "title": "Jaminan Kualitas",
+        "desc": "Audit pemasok ketat dan kontrol kualitas end-to-end memastikan setiap produk memenuhi standar industri"
+      },
+      "price": {
+        "title": "Harga Transparan",
+        "desc": "Sourcing langsung dari pabrik, tanpa perantara, dengan harga grosir yang kompetitif"
+      },
+      "logistics": {
+        "title": "Logistik Lintas Batas",
+        "desc": "Saluran logistik China-Indonesia khusus dengan opsi laut/udara fleksibel dan pelacakan penuh"
+      },
+      "service": {
+        "title": "Layanan Khusus",
+        "desc": "Konsultan pengadaan one-on-one, respons 24/7, solusi sourcing yang disesuaikan"
+      }
+    }
+  },
+  "whyChoose": {
+    "title": "Mengapa Memilih SuCai Cloud",
+    "subtitle": "Keahlian mendalam dalam perdagangan industri China-Indonesia, membangun ekosistem pengadaan terpercaya",
+    "items": {
+      "network": {
+        "title": "Jaringan Pasokan Luas",
+        "desc": "Mencakup 200+ kota di China, 5.000+ pemasok tersertifikasi, lebih dari 1 juta SKU"
+      },
+      "technology": {
+        "title": "Pencocokan Cerdas AI",
+        "desc": "Pencarian dan rekomendasi berbasis AI untuk mencocokkan pemasok dan produk optimal dengan cepat"
+      },
+      "compliance": {
+        "title": "Dukungan Kepatuhan",
+        "desc": "Pengetahuan ahli tentang regulasi impor Indonesia dengan dukungan dokumen bea cukai lengkap"
+      },
+      "payment": {
+        "title": "Pembayaran Fleksibel",
+        "desc": "Berbagai opsi pembayaran lintas batas dengan termin kredit fleksibel untuk meringankan arus kas"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Ulasan Pelanggan",
+    "subtitle": "Feedback nyata dari perusahaan Indonesia",
+    "items": {
+      "1": {
+        "name": "Budi Santoso",
+        "company": "PT Maju Industri",
+        "role": "Direktur Pengadaan",
+        "content": "SuCai Cloud membantu kami mengurangi biaya pengadaan sebesar 25% sambil meningkatkan kecepatan logistik secara signifikan. Platform mudah digunakan dan pemasok merespons dengan cepat — mitra jangka panjang yang andal."
+      },
+      "2": {
+        "name": "Siti Rahayu",
+        "company": "CV Teknik Jaya",
+        "role": "Manajer Operasional",
+        "content": "Sebagai perusahaan manufaktur, kami memiliki persyaratan kualitas yang sangat tinggi. Sistem audit pemasok SuCai Cloud memberikan kami kepercayaan — kualitas produk stabil dan layanan purna jual sangat baik."
+      },
+      "3": {
+        "name": "Ahmad Wijaya",
+        "company": "UD Sumber Makmur",
+        "role": "Direktur Utama",
+        "content": "Dari hardware hingga APD, satu platform menangani semua kebutuhan pengadaan kami. Pencarian AI sangat berguna dan menghemat waktu sourcing kami. Sangat direkomendasikan!"
+      },
+      "4": {
+        "name": "Thomas Chen",
+        "company": "TB Manufacturing",
+        "role": "Manajer Rantai Pasok",
+        "content": "Pengadaan lintas batas dulu menjadi titik sakit terbesar kami. Tim profesional SuCai Cloud menyelesaikan masalah bea cukai, logistik, dan pembayaran sehingga kami bisa fokus pada bisnis inti."
+      }
+    }
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Mulai perjalanan pengadaan industri Anda — tim kami siap membantu",
+    "form": {
+      "name": "Nama",
+      "company": "Perusahaan",
+      "email": "Email",
+      "phone": "Telepon",
+      "message": "Pesan",
+      "submit": "Kirim Pertanyaan",
+      "namePlaceholder": "Masukkan nama Anda",
+      "companyPlaceholder": "Masukkan nama perusahaan",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+62 xxx xxxx xxxx",
+      "messagePlaceholder": "Jelaskan kebutuhan pengadaan Anda..."
+    },
+    "info": {
+      "address": "Alamat",
+      "addressValue": "Jakarta, Indonesia · Shenzhen, China",
+      "email": "Email",
+      "emailValue": "contact@sucaicloud.com",
+      "phone": "Telepon",
+      "phoneValue": "+62 21 1234 5678",
+      "hours": "Jam Kerja",
+      "hoursValue": "Sen - Jum 09:00 - 18:00 (WIB)"
+    }
+  },
+  "footer": {
+    "description": "SuCai Cloud adalah platform B2B yang mengkhususkan diri dalam pengadaan perlengkapan industri lintas batas China-Indonesia, menyediakan solusi sourcing terpadu untuk perusahaan.",
+    "products": "Produk",
+    "company": "Perusahaan",
+    "support": "Dukungan",
+    "legal": "Legal",
+    "links": {
+      "hardware": "Hardware",
+      "electrical": "Listrik",
+      "safety": "APD",
+      "tools": "Perkakas",
+      "about": "Tentang Kami",
+      "careers": "Karir",
+      "news": "Berita",
+      "contact": "Kontak",
+      "help": "Pusat Bantuan",
+      "faq": "FAQ",
+      "shipping": "Info Pengiriman",
+      "returns": "Kebijakan Retur",
+      "privacy": "Kebijakan Privasi",
+      "terms": "Syarat Layanan",
+      "cookies": "Kebijakan Cookie"
+    },
+    "copyright": "© {year} SuCai Cloud. Hak cipta dilindungi."
+  },
+  "productsPage": {
+    "meta": {
+      "title": "Pusat Produk",
+      "description": "Jelajahi hardware, listrik, APD, dan produk industri lainnya. Filter berdasarkan kategori dan minta penawaran massal."
+    },
+    "breadcrumb": {
+      "home": "Beranda",
+      "products": "Produk"
+    },
+    "title": "Pusat Produk",
+    "subtitle": "Perlengkapan industri lengkap dengan filter kategori dan permintaan penawaran massal",
+    "searchPlaceholder": "Cari nama produk, merek, model...",
+    "searchButton": "Cari",
+    "filters": {
+      "title": "Filter",
+      "price": "Rentang Harga",
+      "brand": "Merek",
+      "allBrands": "Semua Merek",
+      "reset": "Reset Filter",
+      "results": "{count} produk ditemukan"
+    },
+    "sidebar": {
+      "brand": "Merek",
+      "stock": "Status Stok"
+    },
+    "stockFilter": {
+      "all": "Semua",
+      "inStock": "Stok Tersedia",
+      "preOrder": "Pre-order"
+    },
+    "sort": {
+      "label": "Urutkan",
+      "newest": "Terbaru",
+      "hot": "Populer"
+    },
+    "priceRanges": {
+      "all": "Semua Harga",
+      "under100": "Di bawah 100",
+      "100to500": "100 - 500",
+      "500to2000": "500 - 2.000",
+      "above2000": "Di atas 2.000"
+    },
+    "brands": {
+      "bosch": "Bosch",
+      "makita": "Makita",
+      "schneider": "Schneider",
+      "abb": "ABB",
+      "skf": "SKF"
+    },
+    "categories": {
+      "all": "Semua Kategori",
+      "hardware-tools": "Hardware & Perkakas",
+      "electrical": "Listrik & Elektrik",
+      "safety": "Perlengkapan APD",
+      "pipes": "Pipa & Fitting",
+      "valves": "Katup",
+      "bearings": "Bearing",
+      "consumables": "Bahan Habis Pakai",
+      "logistics": "Gudang & Logistik"
+    },
+    "card": {
+      "brand": "Merek",
+      "model": "Model",
+      "moq": "MOQ",
+      "stock": "Stok",
+      "location": "Pengiriman",
+      "inquiry": "Minta Penawaran",
+      "moqUnit": "pcs min."
+    },
+    "stock": {
+      "inStock": "Stok Tersedia",
+      "preOrder": "Pre-order"
+    },
+    "locations": {
+      "shenzhen": "Shenzhen, GD",
+      "guangzhou": "Guangzhou, GD",
+      "yiwu": "Yiwu, ZJ",
+      "ningbo": "Ningbo, ZJ",
+      "shanghai": "Shanghai"
+    },
+    "pagination": {
+      "prev": "Sebelumnya",
+      "next": "Selanjutnya",
+      "page": "Halaman {current} dari {total}"
+    },
+    "empty": {
+      "title": "Produk tidak ditemukan",
+      "desc": "Coba sesuaikan filter atau kata kunci pencarian",
+      "reset": "Hapus Filter"
+    },
+    "mobileCategories": "Kategori",
+    "items": {
+      "p1": { "name": "Gerinda Sudut Industri", "description": "Gerinda sudut industri BOSCH 750W, ideal untuk pemotongan dan penggerindaan logam. Bersertifikat CE untuk pengadaan pabrik." },
+      "p2": { "name": "Gerinda Sudut Profesional", "description": "Gerinda sudut profesional Makita dengan dissipasi panas efisien untuk operasi stabil dalam waktu lama." },
+      "p3": { "name": "Pemutus Sirkuit Motor", "description": "Pemutus sirkuit motor Schneider untuk proteksi overload dan short-circuit di aplikasi industri." },
+      "p4": { "name": "Miniature Circuit Breaker C32", "description": "MCB ABB C32, cocok untuk panel distribusi dan sistem kelistrikan industri." },
+      "p5": { "name": "Sepatu Safety", "description": "Sepatu safety sesuai GB21148-2020 dengan steel toe cap dan midsole anti tusuk untuk bengkel pabrik." },
+      "p6": { "name": "Helm Safety", "description": "Helm safety industri ABS dengan resistensi impact tinggi. Logo perusahaan dapat dikustomisasi." },
+      "p7": { "name": "Pipa Seamless SS304", "description": "Pipa seamless stainless steel 304 DN50 untuk sistem pipa tahan korosi di industri makanan dan kimia." },
+      "p8": { "name": "Pipa Air PVC-U", "description": "Pipa air PVC-U DN32 dengan rating tekanan tinggi untuk sistem suplai air bangunan." },
+      "p9": { "name": "Katup Gate Cast Steel DN80", "description": "Katup gate cast steel Z41H-16C DN80, cocok untuk media uap, air, dan minyak." },
+      "p10": { "name": "Bearing Deep Groove 6205", "description": "Bearing SKF 6205-2RS deep groove dengan seal karet ganda, rendah bising dan tahan lama." },
+      "p11": { "name": "Grease Industri", "description": "Grease industri SKF LGMT 2 serbaguna untuk bearing, gear, dan kebutuhan pelumasan lainnya." },
+      "p12": { "name": "Kotak Perkakas Industri", "description": "Kotak perkakas kapasitas besar Makita, kokoh dan tahan lama untuk logistik gudang dan operasi lapangan." }
+    }
+  },
+  "productDetail": {
+    "breadcrumb": {
+      "detail": "Detail Produk"
+    },
+    "sku": "SKU",
+    "updatedAt": "Terakhir Diperbarui",
+    "specsTitle": "Spesifikasi Produk",
+    "descTitle": "Deskripsi Produk",
+    "recommendedTitle": "Produk Rekomendasi",
+    "inquiry": "Minta Penawaran",
+    "whatsapp": "Hubungi WhatsApp",
+    "whatsappMessage": "Halo, saya ingin bertanya tentang pembelian \"{productName}\". Bisakah Anda membantu?",
+    "backToList": "Kembali ke Daftar Produk",
+    "inquiryHint": "Setelah mengirim permintaan penawaran, konsultan pengadaan kami akan menghubungi Anda dalam 24 jam",
+    "specLabels": {
+      "voltage": "Tegangan",
+      "power": "Daya",
+      "material": "Material",
+      "dimensions": "Dimensi",
+      "weight": "Berat",
+      "certification": "Sertifikasi"
+    },
+    "items": {
+      "p1": {
+        "longDescription": "Gerinda sudut industri BOSCH GWS 750-100 dengan motor 750W untuk pemotongan, penggerindaan, dan deburring logam. Desain gagang ergonomis mengurangi kelelahan. Proteksi isolasi ganda, bersertifikat CE dan CCC. Ideal untuk bengkel pabrik, pengolahan baja, dan perawatan peralatan dengan kustomisasi OEM dan harga grosir.",
+        "specs": { "voltage": "220V / 50Hz", "power": "750W", "material": "Housing logam + plastik engineering", "dimensions": "350 × 120 × 100 mm", "weight": "2,1 kg", "certification": "CE, CCC" }
+      },
+      "p2": {
+        "longDescription": "Gerinda sudut profesional Makita 9557NB dengan dissipasi panas efisien untuk operasi stabil dalam waktu lama. Desain kompak untuk ruang sempit, ideal untuk pengolahan logam, pekerjaan pasca-las, dan perbaikan lapangan. Kualitas asli Makita untuk kontraktor dan pengadaan pabrik.",
+        "specs": { "voltage": "220V / 50Hz", "power": "840W", "material": "Gearbox aluminium + housing ABS", "dimensions": "270 × 120 × 95 mm", "weight": "1,9 kg", "certification": "CE, GS" }
+      },
+      "p3": {
+        "longDescription": "Kontaktor AC Schneider LC1D09M7C, arus nominal 9A untuk kontrol motor industri dan sistem otomasi. Kontak paduan perak untuk umur panjang dan resistansi kontak rendah. Bekerja dengan relay termal untuk proteksi overload motor, banyak digunakan di lini produksi.",
+        "specs": { "voltage": "Kumparan 220V AC", "power": "4 kW @ 380V", "material": "Plastik engineering + kontak paduan perak", "dimensions": "45 × 75 × 86 mm", "weight": "0,35 kg", "certification": "CE, CCC, RoHS" }
+      },
+      "p4": {
+        "longDescription": "Miniature circuit breaker ABB A9F74110, kurva C 10A untuk panel distribusi industri dan sistem kelistrikan bangunan. Kapasitas pemutusan tinggi dengan proteksi trip cepat. Produk asli ABB dengan pasokan grosir dan dukungan penawaran proyek.",
+        "specs": { "voltage": "230/400V AC", "power": "—", "material": "Termoplastik + busbar tembaga", "dimensions": "18 × 78 × 69 mm (1P)", "weight": "0,12 kg", "certification": "CE, IEC 60898" }
+      },
+      "p5": {
+        "longDescription": "Sepatu safety industri sesuai GB21148-2020 dengan steel toe cap dan midsole anti tusuk untuk bengkel pabrik, gudang, dan lokasi konstruksi. Sol tahan slip dan tahan lama dengan lining breathable. Logo kustom dan pesanan grosir tersedia.",
+        "specs": { "voltage": "—", "power": "—", "material": "Kulit full-grain + steel toe + midsole Kevlar", "dimensions": "EU 36–48", "weight": "1,1 kg / pasang", "certification": "GB21148-2020, CE" }
+      },
+      "p6": {
+        "longDescription": "Helm safety industri Makita H910 Pro ABS dengan resistensi impact tinggi untuk lokasi konstruksi, bengkel pabrik, dan pekerjaan outdoor. Headband adjustable untuk kenyamanan. Cetak logo perusahaan tersedia untuk pesanan grosir.",
+        "specs": { "voltage": "—", "power": "—", "material": "Plastik engineering ABS", "dimensions": "280 × 220 × 150 mm", "weight": "0,38 kg", "certification": "GB2811-2019, CE EN397" }
+      },
+      "p7": {
+        "longDescription": "Pipa seamless stainless steel 304 DN50 dengan resistensi korosi tinggi untuk sistem pipa industri makanan, kimia, dan farmasi. Ketebalan dinding seragam dengan rating tekanan stabil. Pemotongan panjang kustom dan pasokan grosir tersedia.",
+        "specs": { "voltage": "—", "power": "—", "material": "Stainless steel 304 (06Cr19Ni10)", "dimensions": "DN50 × 3mm × 6m", "weight": "22,5 kg / batang", "certification": "GB/T 14976, ISO 9001" }
+      },
+      "p8": {
+        "longDescription": "Pipa air PVC-U DN32 dengan rating tekanan tinggi untuk suplai air bangunan dan sistem pendingin industri. Sambungan mudah dan instalasi efisien. Memenuhi standar higienis air minum dengan dukungan pasokan proyek grosir.",
+        "specs": { "voltage": "—", "power": "—", "material": "PVC-U (polivinil klorida tidak plastis)", "dimensions": "DN32 × 4,4mm × 4m", "weight": "3,2 kg / batang", "certification": "GB/T 10002, Izin Kesehatan" }
+      },
+      "p9": {
+        "longDescription": "Katup gate cast steel Z41H-16C DN80, tekanan nominal PN16 untuk sistem pipa media uap, air, dan minyak. Struktur body kokoh dengan sealing andal. Banyak digunakan di industri kimia, listrik, dan engineering municipal dengan dukungan penawaran proyek.",
+        "specs": { "voltage": "—", "power": "—", "material": "Cast steel WCB + stem 13Cr", "dimensions": "DN80, L=310mm", "weight": "18,5 kg", "certification": "GB/T 12232, API 600" }
+      },
+      "p10": {
+        "longDescription": "Bearing SKF 6205-2RS deep groove dengan seal karet ganda untuk rendah bising dan umur panjang. Cocok untuk motor, pompa, gearbox, dan peralatan transmisi industri. Produk asli SKF dengan pasokan grosir dan perjanjian replenishment.",
+        "specs": { "voltage": "—", "power": "—", "material": "Baja krom (GCr15)", "dimensions": "25 × 52 × 15 mm", "weight": "0,13 kg", "certification": "ISO 9001, SKF Asli" }
+      },
+      "p11": {
+        "longDescription": "Grease industri SKF LGMT 2 serbaguna untuk bearing, gear, dan kebutuhan pelumasan lainnya. Resistensi cuci air dan karat yang baik dengan rentang suhu operasi lebar. Tabung 400g untuk penggunaan lapangan yang praktis dengan dukungan pembelian grosir.",
+        "specs": { "voltage": "—", "power": "—", "material": "Grease kompleks litium", "dimensions": "400g / tabung", "weight": "0,42 kg", "certification": "NLGI 2, ISO 9001" }
+      },
+      "p12": {
+        "longDescription": "Kotak perkakas industri Makita STST19405 kapasitas besar, kokoh dan tahan lama untuk logistik gudang dan operasi lapangan. Desain kompartemen multi-layer untuk penyimpanan terorganisir. Kunci kuat untuk transportasi aman. Ideal untuk tim engineering dan departemen maintenance.",
+        "specs": { "voltage": "—", "power": "—", "material": "Komposit PP + ABS", "dimensions": "495 × 396 × 251 mm", "weight": "4,8 kg", "certification": "CE, Makita Asli" }
+      }
+    }
+  }
+}

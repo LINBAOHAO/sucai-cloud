@@ -1,0 +1,391 @@
+{
+  "metadata": {
+    "title": "SuCai Cloud - One-Stop Industrial Supplies Procurement",
+    "description": "Connecting Chinese suppliers with Indonesian enterprises for hardware, electrical, safety, tools, pipes, valves, bearings and more"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "brands": "Brands",
+    "about": "About Us",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "language": "Language",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hello, I'd like to inquire about industrial supplies procurement. Can you help?"
+  },
+  "hero": {
+    "badge": "B2B Industrial Procurement",
+    "title": "One-Stop Industrial Supplies Platform",
+    "subtitle": "Connecting Chinese Suppliers with Indonesian Enterprise Procurement",
+    "ctaPrimary": "Start Sourcing",
+    "ctaSecondary": "Become a Supplier",
+    "stats": {
+      "suppliers": "Verified Suppliers",
+      "products": "Product SKUs",
+      "countries": "Countries Served",
+      "orders": "Successful Orders"
+    }
+  },
+  "search": {
+    "title": "AI Smart Search",
+    "subtitle": "Quickly find the industrial supplies you need",
+    "placeholder": "Enter product name, e.g. angle grinder, safety shoes, cable...",
+    "button": "Search",
+    "hotLabel": "Hot searches:",
+    "tags": {
+      "angleGrinder": "Angle Grinder",
+      "generator": "Generator",
+      "safetySupplies": "Safety Supplies",
+      "cable": "Cable",
+      "valve": "Valve",
+      "bearing": "Bearing"
+    }
+  },
+  "categories": {
+    "title": "Popular Categories",
+    "subtitle": "Full-range industrial supplies — browse by category",
+    "viewAll": "View All Categories",
+    "explore": "Explore",
+    "items": {
+      "hardware-tools": { "name": "Hardware & Tools", "desc": "Hand tools, power tools, measuring tools" },
+      "electrical": { "name": "Electrical", "desc": "Components, switches, cables, distribution" },
+      "safety": { "name": "Safety Equipment", "desc": "Safety protection, PPE" },
+      "pipes": { "name": "Pipes & Fittings", "desc": "Pipes, fittings, flanges, hoses" },
+      "valves": { "name": "Valves", "desc": "Ball, gate, butterfly, check valves" },
+      "bearings": { "name": "Bearings", "desc": "Rolling bearings, couplings" },
+      "consumables": { "name": "Industrial Consumables", "desc": "Cutting fluid, grease, grinding wheels" },
+      "logistics": { "name": "Warehouse & Logistics", "desc": "Racking, pallets, handling equipment" }
+    }
+  },
+  "hotProducts": {
+    "title": "Hot Products",
+    "subtitle": "Top choices for Indonesian enterprises — bulk inquiry supported",
+    "viewAll": "View More Products",
+    "model": "Model",
+    "brand": "Brand",
+    "hot": "Hot",
+    "inquiry": "Request Quote",
+    "items": {
+      "1": { "name": "Industrial Angle Grinder", "model": "GWS 750-100", "brand": "BOSCH" },
+      "2": { "name": "Diesel Generator Set", "model": "GF-20KW", "brand": "CUMMINS" },
+      "3": { "name": "Safety Work Shoes", "model": "GB21148-2020", "brand": "Honeywell" },
+      "4": { "name": "Copper Power Cable", "model": "YJV-3×95+2×50", "brand": "Far East Cable" },
+      "5": { "name": "Air Circuit Breaker", "model": "DZ47-63 C32", "brand": "Delixi" },
+      "6": { "name": "Cast Steel Gate Valve", "model": "Z41H-16C DN80", "brand": "Shanghai Lianggong" },
+      "7": { "name": "Deep Groove Ball Bearing", "model": "6205-2RS", "brand": "SKF" },
+      "8": { "name": "Industrial Grease", "model": "LGMT 2/0.4", "brand": "SKF" }
+    }
+  },
+  "brands": {
+    "title": "Recommended Brands",
+    "subtitle": "Globally renowned brands, authentic products guaranteed",
+    "viewAll": "View All Brands"
+  },
+  "advantages": {
+    "title": "Our Advantages",
+    "subtitle": "Professional B2B industrial procurement services to reduce costs and boost efficiency",
+    "items": {
+      "quality": {
+        "title": "Quality Assurance",
+        "desc": "Rigorous supplier audits and end-to-end quality control ensuring every product meets industrial standards"
+      },
+      "price": {
+        "title": "Transparent Pricing",
+        "desc": "Direct factory sourcing eliminates middlemen, delivering competitive wholesale prices"
+      },
+      "logistics": {
+        "title": "Cross-Border Logistics",
+        "desc": "Dedicated China-Indonesia logistics channels with flexible sea/air options and full tracking"
+      },
+      "service": {
+        "title": "Dedicated Service",
+        "desc": "One-on-one procurement advisors, 24/7 response, customized sourcing solutions"
+      }
+    }
+  },
+  "whyChoose": {
+    "title": "Why Choose SuCai Cloud",
+    "subtitle": "Deep expertise in China-Indonesia industrial trade, building a trusted procurement ecosystem",
+    "items": {
+      "network": {
+        "title": "Vast Supply Network",
+        "desc": "Covering 200+ cities in China, 5,000+ certified suppliers, over 1 million SKUs"
+      },
+      "technology": {
+        "title": "AI Smart Matching",
+        "desc": "AI-powered search and recommendations to quickly match optimal suppliers and products"
+      },
+      "compliance": {
+        "title": "Compliance Support",
+        "desc": "Expert knowledge of Indonesian import regulations with full customs clearance documentation"
+      },
+      "payment": {
+        "title": "Flexible Payment",
+        "desc": "Multiple cross-border payment options with flexible credit terms to ease cash flow"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Customer Reviews",
+    "subtitle": "Real feedback from Indonesian enterprises",
+    "items": {
+      "1": {
+        "name": "Budi Santoso",
+        "company": "PT Maju Industri",
+        "role": "Procurement Director",
+        "content": "SuCai Cloud helped us reduce procurement costs by 25% while significantly improving logistics speed. The platform is easy to use and suppliers respond quickly — a reliable long-term partner."
+      },
+      "2": {
+        "name": "Siti Rahayu",
+        "company": "CV Teknik Jaya",
+        "role": "Operations Manager",
+        "content": "As a manufacturing company, we have extremely high quality requirements. SuCai Cloud's supplier audit system gives us confidence — product quality is stable and after-sales service is excellent."
+      },
+      "3": {
+        "name": "Ahmad Wijaya",
+        "company": "UD Sumber Makmur",
+        "role": "General Manager",
+        "content": "From hardware to safety equipment, one platform handles all our procurement needs. The AI search is incredibly useful and saves us significant sourcing time. Highly recommended!"
+      },
+      "4": {
+        "name": "Thomas Chen",
+        "company": "TB Manufacturing",
+        "role": "Supply Chain Manager",
+        "content": "Cross-border procurement used to be our biggest pain point. SuCai Cloud's professional team solved customs, logistics, and payment challenges so we can focus on our core business."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Start your industrial procurement journey — our team is ready to assist",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Submit Inquiry",
+      "namePlaceholder": "Enter your name",
+      "companyPlaceholder": "Enter company name",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+62 xxx xxxx xxxx",
+      "messagePlaceholder": "Describe your procurement needs..."
+    },
+    "info": {
+      "address": "Address",
+      "addressValue": "Jakarta, Indonesia · Shenzhen, China",
+      "email": "Email",
+      "emailValue": "contact@sucaicloud.com",
+      "phone": "Phone",
+      "phoneValue": "+62 21 1234 5678",
+      "hours": "Business Hours",
+      "hoursValue": "Mon - Fri 9:00 AM - 6:00 PM (WIB)"
+    }
+  },
+  "footer": {
+    "description": "SuCai Cloud is a B2B platform specializing in China-Indonesia cross-border industrial supplies procurement, providing one-stop sourcing solutions for enterprises.",
+    "products": "Products",
+    "company": "Company",
+    "support": "Support",
+    "legal": "Legal",
+    "links": {
+      "hardware": "Hardware",
+      "electrical": "Electrical",
+      "safety": "Safety",
+      "tools": "Tools",
+      "about": "About Us",
+      "careers": "Careers",
+      "news": "News",
+      "contact": "Contact",
+      "help": "Help Center",
+      "faq": "FAQ",
+      "shipping": "Shipping Info",
+      "returns": "Return Policy",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "copyright": "© {year} SuCai Cloud. All rights reserved."
+  },
+  "productsPage": {
+    "meta": {
+      "title": "Product Center",
+      "description": "Browse hardware, electrical, safety equipment and more. Filter by category and request bulk quotes."
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "products": "Products"
+    },
+    "title": "Product Center",
+    "subtitle": "Full-range industrial supplies with category filters and bulk inquiry",
+    "searchPlaceholder": "Search product name, brand, model...",
+    "searchButton": "Search",
+    "filters": {
+      "title": "Filters",
+      "price": "Price Range",
+      "brand": "Brand",
+      "allBrands": "All Brands",
+      "reset": "Reset Filters",
+      "results": "{count} products found"
+    },
+    "sidebar": {
+      "brand": "Brand",
+      "stock": "Stock Status"
+    },
+    "stockFilter": {
+      "all": "All",
+      "inStock": "In Stock",
+      "preOrder": "Pre-order"
+    },
+    "sort": {
+      "label": "Sort",
+      "newest": "Newest",
+      "hot": "Popular"
+    },
+    "priceRanges": {
+      "all": "All Prices",
+      "under100": "Under 100",
+      "100to500": "100 - 500",
+      "500to2000": "500 - 2,000",
+      "above2000": "Above 2,000"
+    },
+    "brands": {
+      "bosch": "Bosch",
+      "makita": "Makita",
+      "schneider": "Schneider",
+      "abb": "ABB",
+      "skf": "SKF"
+    },
+    "categories": {
+      "all": "All Categories",
+      "hardware-tools": "Hardware & Tools",
+      "electrical": "Electrical",
+      "safety": "Safety Equipment",
+      "pipes": "Pipes & Fittings",
+      "valves": "Valves",
+      "bearings": "Bearings",
+      "consumables": "Industrial Consumables",
+      "logistics": "Warehouse & Logistics"
+    },
+    "card": {
+      "brand": "Brand",
+      "model": "Model",
+      "moq": "MOQ",
+      "stock": "Stock",
+      "location": "Ships From",
+      "inquiry": "Request Quote",
+      "moqUnit": "pcs min."
+    },
+    "stock": {
+      "inStock": "In Stock",
+      "preOrder": "Pre-order"
+    },
+    "locations": {
+      "shenzhen": "Shenzhen, GD",
+      "guangzhou": "Guangzhou, GD",
+      "yiwu": "Yiwu, ZJ",
+      "ningbo": "Ningbo, ZJ",
+      "shanghai": "Shanghai"
+    },
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next",
+      "page": "Page {current} of {total}"
+    },
+    "empty": {
+      "title": "No products found",
+      "desc": "Try adjusting your filters or search keywords",
+      "reset": "Clear Filters"
+    },
+    "mobileCategories": "Categories",
+    "items": {
+      "p1": { "name": "Industrial Angle Grinder", "description": "BOSCH industrial angle grinder, 750W power, ideal for metal cutting and grinding. CE certified for bulk factory procurement." },
+      "p2": { "name": "Professional Angle Grinder", "description": "Makita professional angle grinder with efficient heat dissipation for stable long-hour operation." },
+      "p3": { "name": "Motor Protection Circuit Breaker", "description": "Schneider motor protection breaker for overload and short-circuit protection in industrial applications." },
+      "p4": { "name": "Air Circuit Breaker C32", "description": "ABB air circuit breaker, C32 rated current, suitable for distribution panels and industrial electrical systems." },
+      "p5": { "name": "Safety Work Shoes", "description": "GB21148-2020 compliant safety shoes with steel toe cap and puncture-resistant midsole for factory workshops." },
+      "p6": { "name": "Safety Helmet", "description": "ABS industrial safety helmet with excellent impact resistance. Custom logo available for enterprises." },
+      "p7": { "name": "304 SS Seamless Pipe", "description": "304 stainless steel seamless pipe DN50 for corrosion-resistant piping in food and chemical industries." },
+      "p8": { "name": "PVC-U Water Pipe", "description": "PVC-U water pipe DN32 with high pressure rating for building water supply systems." },
+      "p9": { "name": "Cast Steel Gate Valve DN80", "description": "Cast steel gate valve Z41H-16C, DN80, suitable for steam, water, and oil media." },
+      "p10": { "name": "Deep Groove Ball Bearing 6205", "description": "SKF 6205-2RS deep groove ball bearing with double rubber seals, low noise and long service life." },
+      "p11": { "name": "Industrial Grease", "description": "SKF LGMT 2 general-purpose industrial grease for bearings, gears and other lubrication needs." },
+      "p12": { "name": "Industrial Tool Box", "description": "Makita large-capacity tool box, rugged and durable for warehouse logistics and field operations." }
+    }
+  },
+  "productDetail": {
+    "breadcrumb": {
+      "detail": "Product Details"
+    },
+    "sku": "SKU",
+    "updatedAt": "Last Updated",
+    "specsTitle": "Specifications",
+    "descTitle": "Product Description",
+    "recommendedTitle": "Recommended Products",
+    "inquiry": "Request Quote",
+    "whatsapp": "WhatsApp Contact",
+    "whatsappMessage": "Hello, I'd like to inquire about purchasing \"{productName}\". Can you help?",
+    "backToList": "Back to Products",
+    "inquiryHint": "After submitting an inquiry, our procurement advisor will contact you within 24 hours",
+    "specLabels": {
+      "voltage": "Voltage",
+      "power": "Power",
+      "material": "Material",
+      "dimensions": "Dimensions",
+      "weight": "Weight",
+      "certification": "Certification"
+    },
+    "items": {
+      "p1": {
+        "longDescription": "BOSCH GWS 750-100 industrial angle grinder with 750W high-power motor for metal cutting, grinding, and deburring. Ergonomic handle design reduces fatigue during extended use. Double insulation protection, CE and CCC certified. Ideal for factory workshops, steel processing, and equipment maintenance with OEM customization and bulk pricing available.",
+        "specs": { "voltage": "220V / 50Hz", "power": "750W", "material": "Metal housing + engineering plastic", "dimensions": "350 × 120 × 100 mm", "weight": "2.1 kg", "certification": "CE, CCC" }
+      },
+      "p2": {
+        "longDescription": "Makita 9557NB professional angle grinder with efficient heat dissipation for stable long-hour operation. Compact body design for tight spaces, ideal for metal processing, post-welding work, and field repairs. Makita original quality for contractors and bulk factory procurement.",
+        "specs": { "voltage": "220V / 50Hz", "power": "840W", "material": "Aluminum gearbox + ABS housing", "dimensions": "270 × 120 × 95 mm", "weight": "1.9 kg", "certification": "CE, GS" }
+      },
+      "p3": {
+        "longDescription": "Schneider LC1D09M7C AC contactor, 9A rated current for industrial motor control and automation systems. Silver alloy contacts for long life and low contact resistance. Works with thermal relays for motor overload protection, widely used in production lines and equipment upgrades.",
+        "specs": { "voltage": "220V AC coil", "power": "4 kW @ 380V", "material": "Engineering plastic + silver alloy contacts", "dimensions": "45 × 75 × 86 mm", "weight": "0.35 kg", "certification": "CE, CCC, RoHS" }
+      },
+      "p4": {
+        "longDescription": "ABB A9F74110 miniature circuit breaker, C-curve 10A rated current for industrial distribution panels and building electrical systems. High breaking capacity with fast trip protection. ABB genuine product with bulk supply and project quoting support.",
+        "specs": { "voltage": "230/400V AC", "power": "—", "material": "Thermoplastic + copper busbar", "dimensions": "18 × 78 × 69 mm (1P)", "weight": "0.12 kg", "certification": "CE, IEC 60898" }
+      },
+      "p5": {
+        "longDescription": "GB21148-2020 compliant industrial safety shoes with steel toe cap and puncture-resistant midsole for factory workshops, warehousing, and construction sites. Slip-resistant durable sole with breathable lining. Custom logo and bulk orders available.",
+        "specs": { "voltage": "—", "power": "—", "material": "Full-grain leather + steel toe + Kevlar midsole", "dimensions": "EU 36–48", "weight": "1.1 kg / pair", "certification": "GB21148-2020, CE" }
+      },
+      "p6": {
+        "longDescription": "Makita H910 Pro ABS industrial safety helmet with excellent impact resistance for construction sites, factory workshops, and outdoor work. Adjustable headband for comfortable fit. Custom logo printing available for enterprise bulk orders.",
+        "specs": { "voltage": "—", "power": "—", "material": "ABS engineering plastic", "dimensions": "280 × 220 × 150 mm", "weight": "0.38 kg", "certification": "GB2811-2019, CE EN397" }
+      },
+      "p7": {
+        "longDescription": "304 stainless steel seamless pipe DN50 with excellent corrosion resistance for food, chemical, and pharmaceutical piping systems. Uniform wall thickness with stable pressure rating. Custom length cutting and bulk supply available.",
+        "specs": { "voltage": "—", "power": "—", "material": "304 stainless steel (06Cr19Ni10)", "dimensions": "DN50 × 3mm × 6m", "weight": "22.5 kg / piece", "certification": "GB/T 14976, ISO 9001" }
+      },
+      "p8": {
+        "longDescription": "PVC-U water pipe DN32 with high pressure rating for building water supply and industrial cooling systems. Easy connection and efficient installation. Meets drinking water hygiene standards with bulk project supply support.",
+        "specs": { "voltage": "—", "power": "—", "material": "PVC-U (unplasticized polyvinyl chloride)", "dimensions": "DN32 × 4.4mm × 4m", "weight": "3.2 kg / piece", "certification": "GB/T 10002, Hygiene License" }
+      },
+      "p9": {
+        "longDescription": "Z41H-16C cast steel gate valve DN80, PN16 rated pressure for steam, water, and oil media piping systems. Robust body structure with reliable sealing. Widely used in chemical, power, and municipal engineering with project quoting support.",
+        "specs": { "voltage": "—", "power": "—", "material": "WCB cast steel + 13Cr stem", "dimensions": "DN80, L=310mm", "weight": "18.5 kg", "certification": "GB/T 12232, API 600" }
+      },
+      "p10": {
+        "longDescription": "SKF 6205-2RS deep groove ball bearing with double rubber seals for low noise and long service life. Suitable for motors, pumps, gearboxes, and industrial transmission equipment. SKF genuine product with bulk supply and replenishment agreements.",
+        "specs": { "voltage": "—", "power": "—", "material": "Chrome steel (GCr15)", "dimensions": "25 × 52 × 15 mm", "weight": "0.13 kg", "certification": "ISO 9001, SKF Genuine" }
+      },
+      "p11": {
+        "longDescription": "SKF LGMT 2 general-purpose industrial grease for bearings, gears, and other lubrication needs. Excellent water washout and rust protection with wide operating temperature range. 400g tube for convenient field use with bulk purchase support.",
+        "specs": { "voltage": "—", "power": "—", "material": "Lithium complex grease", "dimensions": "400g / tube", "weight": "0.42 kg", "certification": "NLGI 2, ISO 9001" }
+      },
+      "p12": {
+        "longDescription": "Makita STST19405 large-capacity industrial tool box, rugged and durable for warehouse logistics and field operations. Multi-layer compartment design for organized tool storage. High-strength latches for safe transport. Ideal for engineering teams and maintenance departments.",
+        "specs": { "voltage": "—", "power": "—", "material": "PP + ABS composite", "dimensions": "495 × 396 × 251 mm", "weight": "4.8 kg", "certification": "CE, Makita Genuine" }
+      }
+    }
+  }
+}

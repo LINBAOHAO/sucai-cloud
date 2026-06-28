@@ -1,0 +1,391 @@
+{
+  "metadata": {
+    "title": "速采云 - 一站式工业用品采购平台",
+    "description": "连接中国供应商与印尼企业采购，提供五金、电器、劳保、工具、管件、阀门、轴承等工业用品一站式采购服务"
+  },
+  "nav": {
+    "home": "首页",
+    "products": "产品中心",
+    "brands": "品牌中心",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "login": "登录",
+    "register": "注册",
+    "language": "选择语言",
+    "whatsapp": "WhatsApp 咨询",
+    "whatsappMessage": "您好，我想咨询工业用品采购，请问可以帮忙吗？"
+  },
+  "hero": {
+    "badge": "B2B 工业采购平台",
+    "title": "一站式工业用品采购平台",
+    "subtitle": "连接中国供应商与印尼企业采购",
+    "ctaPrimary": "立即采购",
+    "ctaSecondary": "成为供应商",
+    "stats": {
+      "suppliers": "优质供应商",
+      "products": "SKU 产品",
+      "countries": "服务国家",
+      "orders": "成功订单"
+    }
+  },
+  "search": {
+    "title": "AI 智能搜索",
+    "subtitle": "快速找到您需要的工业用品",
+    "placeholder": "请输入产品名称，如：角磨机、劳保鞋、电缆...",
+    "button": "搜索",
+    "hotLabel": "热门搜索：",
+    "tags": {
+      "angleGrinder": "角磨机",
+      "generator": "发电机",
+      "safetySupplies": "劳保用品",
+      "cable": "电缆",
+      "valve": "阀门",
+      "bearing": "轴承"
+    }
+  },
+  "categories": {
+    "title": "热门分类",
+    "subtitle": "覆盖全品类工业用品，一键直达采购专区",
+    "viewAll": "查看全部分类",
+    "explore": "进入分类",
+    "items": {
+      "hardware-tools": { "name": "五金工具", "desc": "手动工具、电动工具、测量工具" },
+      "electrical": { "name": "电气电工", "desc": "电气元件、开关、线缆、配电" },
+      "safety": { "name": "劳保用品", "desc": "安全防护、个人防护装备" },
+      "pipes": { "name": "管材管件", "desc": "管道、接头、法兰、软管" },
+      "valves": { "name": "阀门", "desc": "球阀、闸阀、蝶阀、止回阀" },
+      "bearings": { "name": "轴承", "desc": "滚动轴承、滑动轴承、联轴器" },
+      "consumables": { "name": "工业耗材", "desc": "切削液、润滑脂、砂轮、焊材" },
+      "logistics": { "name": "仓储物流", "desc": "货架、托盘、搬运设备、包装" }
+    }
+  },
+  "hotProducts": {
+    "title": "热门产品",
+    "subtitle": "印尼企业采购首选，支持批量询价，快速响应",
+    "viewAll": "查看更多产品",
+    "model": "型号",
+    "brand": "品牌",
+    "hot": "热销",
+    "inquiry": "立即询价",
+    "items": {
+      "1": { "name": "工业级角磨机", "model": "GWS 750-100", "brand": "BOSCH" },
+      "2": { "name": "柴油发电机组", "model": "GF-20KW", "brand": "CUMMINS" },
+      "3": { "name": "防砸防穿刺劳保鞋", "model": "GB21148-2020", "brand": "Honeywell" },
+      "4": { "name": "铜芯电力电缆", "model": "YJV-3×95+2×50", "brand": "远东电缆" },
+      "5": { "name": "空气断路器", "model": "DZ47-63 C32", "brand": "德力西" },
+      "6": { "name": "铸钢闸阀", "model": "Z41H-16C DN80", "brand": "上海良工" },
+      "7": { "name": "深沟球轴承", "model": "6205-2RS", "brand": "SKF" },
+      "8": { "name": "工业润滑脂", "model": "LGMT 2/0.4", "brand": "SKF" }
+    }
+  },
+  "brands": {
+    "title": "推荐品牌",
+    "subtitle": "全球知名品牌，正品保障",
+    "viewAll": "查看全部品牌"
+  },
+  "advantages": {
+    "title": "我们的优势",
+    "subtitle": "专业 B2B 工业采购服务，助力企业降本增效",
+    "items": {
+      "quality": {
+        "title": "品质保障",
+        "desc": "严格供应商审核，全链路质量管控，确保每一件产品符合工业标准"
+      },
+      "price": {
+        "title": "价格透明",
+        "desc": "直连工厂源头，去除中间环节，提供具有竞争力的批发价格"
+      },
+      "logistics": {
+        "title": "跨境物流",
+        "desc": "专业中印尼物流通道，海运空运灵活选择，全程可追踪"
+      },
+      "service": {
+        "title": "专属服务",
+        "desc": "一对一采购顾问，7×24 小时响应，提供定制化采购方案"
+      }
+    }
+  },
+  "whyChoose": {
+    "title": "为什么选择速采云",
+    "subtitle": "深耕中印尼工业贸易，打造可信赖的采购生态",
+    "items": {
+      "network": {
+        "title": "庞大供应网络",
+        "desc": "覆盖中国 200+ 城市，5000+ 认证供应商，SKU 超过 100 万"
+      },
+      "technology": {
+        "title": "AI 智能匹配",
+        "desc": "基于 AI 的智能搜索与推荐，快速匹配最优供应商与产品"
+      },
+      "compliance": {
+        "title": "合规保障",
+        "desc": "熟悉印尼进口法规，提供完整报关清关与合规文件支持"
+      },
+      "payment": {
+        "title": "灵活支付",
+        "desc": "支持多种跨境支付方式，账期灵活，降低采购资金压力"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "客户评价",
+    "subtitle": "来自印尼企业的真实反馈",
+    "items": {
+      "1": {
+        "name": "Budi Santoso",
+        "company": "PT Maju Industri",
+        "role": "采购总监",
+        "content": "速采云帮助我们将采购成本降低了 25%，物流时效也大幅改善。平台操作简便，供应商响应迅速，是我们长期合作的可靠伙伴。"
+      },
+      "2": {
+        "name": "Siti Rahayu",
+        "company": "CV Teknik Jaya",
+        "role": "运营经理",
+        "content": "作为制造业企业，我们对产品质量要求极高。速采云的供应商审核体系让我们非常放心，产品质量稳定，售后服务也很到位。"
+      },
+      "3": {
+        "name": "Ahmad Wijaya",
+        "company": "UD Sumber Makmur",
+        "role": "总经理",
+        "content": "从五金到劳保，一个平台搞定所有采购需求。AI 搜索功能非常实用，大大节省了我们的寻源时间。强烈推荐！"
+      },
+      "4": {
+        "name": "Thomas Chen",
+        "company": "TB Manufacturing",
+        "role": "供应链主管",
+        "content": "跨境采购曾经是我们最大的痛点，速采云的专业团队解决了报关、物流、支付等所有问题，让我们可以专注于核心业务。"
+      }
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "开启您的工业采购之旅，我们的团队随时为您服务",
+    "form": {
+      "name": "姓名",
+      "company": "公司名称",
+      "email": "电子邮箱",
+      "phone": "联系电话",
+      "message": "留言内容",
+      "submit": "提交咨询",
+      "namePlaceholder": "请输入您的姓名",
+      "companyPlaceholder": "请输入公司名称",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+62 xxx xxxx xxxx",
+      "messagePlaceholder": "请描述您的采购需求..."
+    },
+    "info": {
+      "address": "地址",
+      "addressValue": "印度尼西亚雅加达 · 中国深圳",
+      "email": "邮箱",
+      "emailValue": "contact@sucaicloud.com",
+      "phone": "电话",
+      "phoneValue": "+62 21 1234 5678",
+      "hours": "工作时间",
+      "hoursValue": "周一至周五 9:00 - 18:00 (WIB)"
+    }
+  },
+  "footer": {
+    "description": "速采云是专注于中印尼工业用品跨境采购的 B2B 平台，为企业提供一站式采购解决方案。",
+    "products": "产品中心",
+    "company": "公司信息",
+    "support": "客户支持",
+    "legal": "法律条款",
+    "links": {
+      "hardware": "五金",
+      "electrical": "电器",
+      "safety": "劳保",
+      "tools": "工具",
+      "about": "关于我们",
+      "careers": "加入我们",
+      "news": "新闻动态",
+      "contact": "联系我们",
+      "help": "帮助中心",
+      "faq": "常见问题",
+      "shipping": "物流说明",
+      "returns": "退换政策",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "cookies": "Cookie 政策"
+    },
+    "copyright": "© {year} 速采云 SuCai Cloud. 保留所有权利。"
+  },
+  "productsPage": {
+    "meta": {
+      "title": "产品中心",
+      "description": "浏览五金工具、电气电工、劳保用品等全品类工业产品，支持分类筛选与批量询价"
+    },
+    "breadcrumb": {
+      "home": "首页",
+      "products": "产品中心"
+    },
+    "title": "产品中心",
+    "subtitle": "全品类工业用品，支持分类筛选、批量询价",
+    "searchPlaceholder": "搜索产品名称、品牌、型号...",
+    "searchButton": "搜索",
+    "filters": {
+      "title": "筛选条件",
+      "price": "价格区间",
+      "brand": "品牌",
+      "allBrands": "全部品牌",
+      "reset": "重置筛选",
+      "results": "共 {count} 件商品"
+    },
+    "sidebar": {
+      "brand": "品牌",
+      "stock": "库存状态"
+    },
+    "stockFilter": {
+      "all": "全部",
+      "inStock": "现货",
+      "preOrder": "预订"
+    },
+    "sort": {
+      "label": "排序",
+      "newest": "最新",
+      "hot": "热门"
+    },
+    "priceRanges": {
+      "all": "全部价格",
+      "under100": "100 以下",
+      "100to500": "100 - 500",
+      "500to2000": "500 - 2,000",
+      "above2000": "2,000 以上"
+    },
+    "brands": {
+      "bosch": "Bosch",
+      "makita": "Makita",
+      "schneider": "Schneider",
+      "abb": "ABB",
+      "skf": "SKF"
+    },
+    "categories": {
+      "all": "全部分类",
+      "hardware-tools": "五金工具",
+      "electrical": "电气电工",
+      "safety": "劳保用品",
+      "pipes": "管材管件",
+      "valves": "阀门",
+      "bearings": "轴承",
+      "consumables": "工业耗材",
+      "logistics": "仓储物流"
+    },
+    "card": {
+      "brand": "品牌",
+      "model": "型号",
+      "moq": "MOQ",
+      "stock": "库存",
+      "location": "发货地",
+      "inquiry": "立即询价",
+      "moqUnit": "件起订"
+    },
+    "stock": {
+      "inStock": "现货",
+      "preOrder": "预订"
+    },
+    "locations": {
+      "shenzhen": "广东深圳",
+      "guangzhou": "广东广州",
+      "yiwu": "浙江义乌",
+      "ningbo": "浙江宁波",
+      "shanghai": "上海"
+    },
+    "pagination": {
+      "prev": "上一页",
+      "next": "下一页",
+      "page": "第 {current} / {total} 页"
+    },
+    "empty": {
+      "title": "未找到匹配商品",
+      "desc": "请尝试调整筛选条件或搜索关键词",
+      "reset": "清除筛选"
+    },
+    "mobileCategories": "产品分类",
+    "items": {
+      "p1": { "name": "工业级角磨机", "description": "BOSCH 工业级角磨机，750W 功率，适用于金属切割与打磨，通过 CE 认证，适合工厂批量采购。" },
+      "p2": { "name": "专业级角磨机", "description": "Makita 专业级角磨机，高效散热设计，长时间连续作业稳定可靠。" },
+      "p3": { "name": "马达保护断路器", "description": "Schneider 马达保护断路器，适用于电机过载与短路保护，工业级品质。" },
+      "p4": { "name": "空气开关 C32", "description": "ABB 空气开关，C32 额定电流，适用于配电柜与工业电气系统。" },
+      "p5": { "name": "防砸防穿刺劳保鞋", "description": "符合 GB21148-2020 标准，钢包头防砸，防穿刺中底，适用于工厂车间。" },
+      "p6": { "name": "安全帽", "description": "ABS 材质工业安全帽，抗冲击性能优异，支持企业定制 LOGO。" },
+      "p7": { "name": "304 不锈钢无缝管", "description": "304 不锈钢材质，DN50 规格，适用于食品、化工等耐腐蚀管道系统。" },
+      "p8": { "name": "PVC-U 给水管", "description": "PVC-U 给水管 DN32，压力等级高，适用于建筑给水系统。" },
+      "p9": { "name": "铸钢闸阀 DN80", "description": "铸钢闸阀 Z41H-16C，DN80 口径，适用于蒸汽、水、油品等介质。" },
+      "p10": { "name": "深沟球轴承 6205", "description": "SKF 6205-2RS 深沟球轴承，双面橡胶密封，低噪音长寿命。" },
+      "p11": { "name": "工业润滑脂", "description": "SKF LGMT 2 通用工业润滑脂，适用于轴承、齿轮等润滑场景。" },
+      "p12": { "name": "工业工具箱", "description": "Makita 大容量工具箱，坚固耐用，适合仓储物流与现场作业携带。" }
+    }
+  },
+  "productDetail": {
+    "breadcrumb": {
+      "detail": "产品详情"
+    },
+    "sku": "SKU",
+    "updatedAt": "更新时间",
+    "specsTitle": "产品参数",
+    "descTitle": "产品描述",
+    "recommendedTitle": "推荐商品",
+    "inquiry": "立即询价",
+    "whatsapp": "WhatsApp 联系",
+    "whatsappMessage": "您好，我想咨询「{productName}」的采购信息，请问可以帮忙吗？",
+    "backToList": "返回产品列表",
+    "inquiryHint": "提交询价后，我们的采购顾问将在 24 小时内与您联系",
+    "specLabels": {
+      "voltage": "电压",
+      "power": "功率",
+      "material": "材质",
+      "dimensions": "尺寸",
+      "weight": "重量",
+      "certification": "认证"
+    },
+    "items": {
+      "p1": {
+        "longDescription": "BOSCH GWS 750-100 工业级角磨机，采用 750W 高功率电机，适用于金属切割、打磨及去毛刺等工业场景。人体工学手柄设计，长时间作业不易疲劳；配备双重绝缘保护，符合 CE 与 CCC 安全标准。适用于工厂车间、钢结构加工、设备维修等批量采购需求，支持 OEM 定制及批量报价。",
+        "specs": { "voltage": "220V / 50Hz", "power": "750W", "material": "金属壳体 + 工程塑料", "dimensions": "350 × 120 × 100 mm", "weight": "2.1 kg", "certification": "CE, CCC" }
+      },
+      "p2": {
+        "longDescription": "Makita 9557NB 专业角磨机，高效散热系统保障长时间稳定运行。紧凑机身设计便于狭窄空间作业，适用于金属加工、焊接后处理及现场维修。Makita 原厂品质，适合工程承包商及工厂批量采购。",
+        "specs": { "voltage": "220V / 50Hz", "power": "840W", "material": "铝合金齿轮箱 + ABS 外壳", "dimensions": "270 × 120 × 95 mm", "weight": "1.9 kg", "certification": "CE, GS" }
+      },
+      "p3": {
+        "longDescription": "Schneider LC1D09M7C 交流接触器，额定电流 9A，适用于工业电机控制及自动化配电系统。Silver Alloy 触点，寿命长、接触电阻低。可与热继电器配合实现电机过载保护，广泛应用于生产线及设备改造。",
+        "specs": { "voltage": "220V AC 线圈", "power": "4 kW @ 380V", "material": "工程塑料 + 银合金触点", "dimensions": "45 × 75 × 86 mm", "weight": "0.35 kg", "certification": "CE, CCC, RoHS" }
+      },
+      "p4": {
+        "longDescription": "ABB A9F74110 微型断路器，C 曲线 10A 额定电流，适用于工业配电柜及建筑电气系统。高分断能力，快速脱扣保护线路安全。ABB 原厂正品，支持批量供货及项目报价。",
+        "specs": { "voltage": "230/400V AC", "power": "—", "material": "热塑性塑料 + 铜排", "dimensions": "18 × 78 × 69 mm (1P)", "weight": "0.12 kg", "certification": "CE, IEC 60898" }
+      },
+      "p5": {
+        "longDescription": "符合 GB21148-2020 标准的工业安全鞋，钢包头防砸、防穿刺中底，适用于工厂车间、仓储物流及施工现场。防滑耐磨大底，透气内里，支持企业 LOGO 定制及批量采购。",
+        "specs": { "voltage": "—", "power": "—", "material": "头层牛皮 + 钢包头 + Kevlar 中底", "dimensions": "EU 36–48 码", "weight": "1.1 kg / 双", "certification": "GB21148-2020, CE" }
+      },
+      "p6": {
+        "longDescription": "Makita H910 Pro ABS 工业安全帽，抗冲击性能优异，适用于建筑工地、工厂车间及户外作业。可调节头带，佩戴舒适；支持企业 LOGO 丝印定制，满足批量采购需求。",
+        "specs": { "voltage": "—", "power": "—", "material": "ABS 工程塑料", "dimensions": "280 × 220 × 150 mm", "weight": "0.38 kg", "certification": "GB2811-2019, CE EN397" }
+      },
+      "p7": {
+        "longDescription": "304 不锈钢无缝管 DN50，耐腐蚀性能优异，适用于食品、化工及制药行业管道系统。壁厚均匀，承压稳定，支持按长度切割及批量供货。",
+        "specs": { "voltage": "—", "power": "—", "material": "304 不锈钢 (06Cr19Ni10)", "dimensions": "DN50 × 3mm × 6m", "weight": "22.5 kg / 根", "certification": "GB/T 14976, ISO 9001" }
+      },
+      "p8": {
+        "longDescription": "PVC-U 给水管 DN32，高承压等级，适用于建筑给水及工业冷却水系统。连接方便，施工效率高，符合饮用水卫生标准，支持工程项目批量供货。",
+        "specs": { "voltage": "—", "power": "—", "material": "PVC-U (硬聚氯乙烯)", "dimensions": "DN32 × 4.4mm × 4m", "weight": "3.2 kg / 根", "certification": "GB/T 10002, 卫生许可" }
+      },
+      "p9": {
+        "longDescription": "Z41H-16C 铸钢闸阀 DN80，公称压力 PN16，适用于蒸汽、水、油等介质管道系统。阀体结构坚固，密封可靠，广泛应用于化工、电力及市政工程。支持项目报价及技术选型支持。",
+        "specs": { "voltage": "—", "power": "—", "material": "WCB 铸钢 + 13Cr 阀杆", "dimensions": "DN80, L=310mm", "weight": "18.5 kg", "certification": "GB/T 12232, API 600" }
+      },
+      "p10": {
+        "longDescription": "SKF 6205-2RS 深沟球轴承，双面橡胶密封，低噪音、长寿命。适用于电机、泵、减速机及各类工业传动设备。SKF 原厂正品，支持大批量供货及定期补货协议。",
+        "specs": { "voltage": "—", "power": "—", "material": "铬钢 (GCr15)", "dimensions": "25 × 52 × 15 mm", "weight": "0.13 kg", "certification": "ISO 9001, SKF 原厂" }
+      },
+      "p11": {
+        "longDescription": "SKF LGMT 2 通用工业润滑脂，适用于轴承、齿轮及其他工业润滑需求。优异的水洗性和防锈性，工作温度范围宽。400g 管装，便于现场使用，支持批量采购。",
+        "specs": { "voltage": "—", "power": "—", "material": "锂基复合润滑脂", "dimensions": "400g / 管", "weight": "0.42 kg", "certification": "NLGI 2, ISO 9001" }
+      },
+      "p12": {
+        "longDescription": "Makita STST19405 大容量工业工具箱，坚固耐用，适合仓储物流与现场作业携带。多层分隔设计，工具分类存放；高强度锁扣，运输安全。适合工程团队及工厂维修部门批量采购。",
+        "specs": { "voltage": "—", "power": "—", "material": "PP + ABS 复合材质", "dimensions": "495 × 396 × 251 mm", "weight": "4.8 kg", "certification": "CE, Makita 原厂" }
+      }
+    }
+  }
+}

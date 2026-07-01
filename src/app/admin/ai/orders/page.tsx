@@ -35,7 +35,7 @@ export default function AdminAiOrdersPage() {
 
   return (
     <>
-      <AdminPageHeader title="AI Orders" description="AI 采购员订单 — 聊天记录、上传文件、报价与利润" />
+      <AdminPageHeader title="AI 订单" description="AI 采购员订单 — 聊天记录、上传文件、报价与利润" />
 
       <div className="mb-4">
         <div className="relative max-w-md">

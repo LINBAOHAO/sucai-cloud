@@ -98,7 +98,7 @@ export default function AdminCustomerDetailPage() {
         <dl className="grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3">
           <InfoItem label="联系人" value={customer.contactName} />
           <InfoItem label="WhatsApp" value={customer.whatsapp} />
-          <InfoItem label="Email" value={customer.email} />
+          <InfoItem label="邮箱" value={customer.email} />
           <InfoItem label="电话" value={customer.phone} />
           <InfoItem label="国家" value={customer.country} />
           <InfoItem label="城市" value={customer.city} />

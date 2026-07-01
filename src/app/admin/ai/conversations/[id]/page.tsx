@@ -65,7 +65,7 @@ export default function AdminAiConversationDetailPage() {
           <p className="mt-1 font-medium text-slate-900">{conversation.contactName || "—"}</p>
         </div>
         <div className="rounded-xl border border-slate-200 bg-white p-4">
-          <p className="text-xs text-slate-400">Incoterms</p>
+          <p className="text-xs text-slate-400">贸易术语</p>
           <p className="mt-1 font-medium text-slate-900">{conversation.incoterms || "—"}</p>
         </div>
         <div className="rounded-xl border border-slate-200 bg-white p-4">

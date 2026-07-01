@@ -147,7 +147,7 @@ export default function AdminProductsPage() {
   return (
     <>
       <AdminPageHeader
-        title="Products"
+        title="产品"
         description="产品列表管理"
         action={
           <Button onClick={openCreate} className="bg-blue-600 hover:bg-blue-700">
@@ -222,7 +222,7 @@ export default function AdminProductsPage() {
             <Field label="产品名称" required>
               <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="border-slate-200 bg-white" />
             </Field>
-            <Field label="Slug">
+            <Field label="链接别名">
               <Input value={form.slug} onChange={(e) => setForm({ ...form, slug: e.target.value })} placeholder="自动生成" className="border-slate-200 bg-white" />
             </Field>
             <Field label="SKU" required>

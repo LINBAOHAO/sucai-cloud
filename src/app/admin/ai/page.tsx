@@ -23,7 +23,7 @@ export default function AdminAiDashboardPage() {
   return (
     <>
       <AdminPageHeader
-        title="AI Procurement Copilot"
+        title="AI 采购助手"
         description="AI 采购销售助手数据看板"
         action={
           <div className="flex gap-2">
@@ -31,7 +31,7 @@ export default function AdminAiDashboardPage() {
               <Link href="/admin/ai/conversations">会话历史</Link>
             </Button>
             <Button asChild variant="outline" size="sm">
-              <Link href="/admin/ai/orders">AI Orders</Link>
+              <Link href="/admin/ai/orders">AI 订单</Link>
             </Button>
           </div>
         }

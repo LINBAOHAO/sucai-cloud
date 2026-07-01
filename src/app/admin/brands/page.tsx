@@ -70,7 +70,7 @@ export default function AdminBrandsPage() {
   return (
     <>
       <AdminPageHeader
-        title="Brands"
+        title="品牌"
         description="合作品牌管理"
         action={
           <Button onClick={openCreate} className="bg-blue-600 hover:bg-blue-700">

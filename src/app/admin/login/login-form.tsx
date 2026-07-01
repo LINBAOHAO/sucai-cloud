@@ -49,7 +49,7 @@ export function AdminLoginForm() {
           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600">
             <Cloud className="h-6 w-6 text-white" />
           </div>
-          <h1 className="text-xl font-bold text-slate-900">速采云 Admin</h1>
+          <h1 className="text-xl font-bold text-slate-900">速采云后台</h1>
           <p className="mt-1 text-sm text-slate-500">请登录管理后台</p>
         </div>
 

@@ -6,18 +6,18 @@ import { Bot, FileText, FolderTree, LayoutDashboard, MessageSquareQuote, Package
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
-  { href: "/admin/products", label: "Products", icon: Package },
-  { href: "/admin/categories", label: "Categories", icon: FolderTree },
-  { href: "/admin/brands", label: "Brands", icon: Tag },
-  { href: "/admin/suppliers", label: "Suppliers", icon: Truck },
-  { href: "/admin/customers", label: "Customers", icon: Users },
-  { href: "/admin/inquiries", label: "Inquiries", icon: MessageSquareQuote },
-  { href: "/admin/quotations", label: "Quotations", icon: FileText },
-  { href: "/admin/orders", label: "Orders", icon: ShoppingCart },
-  { href: "/admin/ai", label: "AI Agent", icon: Bot },
-  { href: "/admin/ai/orders", label: "AI Orders", icon: Bot },
-  { href: "/admin/settings", label: "Settings", icon: Settings },
+  { href: "/admin", label: "控制台", icon: LayoutDashboard, exact: true },
+  { href: "/admin/products", label: "产品", icon: Package },
+  { href: "/admin/categories", label: "分类", icon: FolderTree },
+  { href: "/admin/brands", label: "品牌", icon: Tag },
+  { href: "/admin/suppliers", label: "供应商", icon: Truck },
+  { href: "/admin/customers", label: "客户", icon: Users },
+  { href: "/admin/inquiries", label: "询价", icon: MessageSquareQuote },
+  { href: "/admin/quotations", label: "报价", icon: FileText },
+  { href: "/admin/orders", label: "订单", icon: ShoppingCart },
+  { href: "/admin/ai", label: "AI 采购员", icon: Bot },
+  { href: "/admin/ai/orders", label: "AI 订单", icon: Bot },
+  { href: "/admin/settings", label: "设置", icon: Settings },
 ];
 
 export function AdminSidebar() {
@@ -30,7 +30,7 @@ export function AdminSidebar() {
           SC
         </div>
         <div>
-          <p className="text-sm font-semibold text-slate-900">速采云 Admin</p>
+          <p className="text-sm font-semibold text-slate-900">速采云后台</p>
           <p className="text-xs text-slate-500">管理后台</p>
         </div>
       </div>

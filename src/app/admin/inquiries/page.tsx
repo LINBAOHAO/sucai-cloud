@@ -75,7 +75,7 @@ export default function AdminInquiriesPage() {
   return (
     <>
       <AdminPageHeader
-        title="Inquiries"
+        title="询价"
         description="客户询价记录管理"
       />
 

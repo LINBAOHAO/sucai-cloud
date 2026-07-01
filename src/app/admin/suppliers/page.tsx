@@ -112,7 +112,7 @@ export default function AdminSuppliersPage() {
   return (
     <>
       <AdminPageHeader
-        title="Suppliers"
+        title="供应商"
         description="供应商管理"
         action={
           <Button onClick={openCreate} className="bg-blue-600 hover:bg-blue-700">
@@ -208,7 +208,7 @@ export default function AdminSuppliersPage() {
                 className="border-slate-200 bg-white"
               />
             </Field>
-            <Field label="Email">
+            <Field label="邮箱">
               <Input
                 type="email"
                 value={form.email}
@@ -234,7 +234,7 @@ export default function AdminSuppliersPage() {
               <Input
                 value={form.paymentTerms}
                 onChange={(e) => setForm({ ...form, paymentTerms: e.target.value })}
-                placeholder="T/T 30% deposit"
+                placeholder="例：T/T 30% 定金"
                 className="border-slate-200 bg-white"
               />
             </Field>

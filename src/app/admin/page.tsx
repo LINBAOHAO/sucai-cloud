@@ -19,7 +19,7 @@ export default function AdminDashboardPage() {
   return (
     <>
       <AdminPageHeader
-        title="Dashboard"
+        title="控制台"
         description="速采云后台数据概览"
       />
 

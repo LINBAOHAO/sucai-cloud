@@ -228,7 +228,7 @@ export default function AdminQuotationsPage() {
   return (
     <>
       <AdminPageHeader
-        title="Quotations"
+        title="报价"
         description="客户报价管理 — 创建、编辑、生成 PDF"
         action={
           <Button onClick={openCreate}>
@@ -348,7 +348,7 @@ export default function AdminQuotationsPage() {
                 />
               </div>
               <div className="space-y-2">
-                <Label>Email</Label>
+                <Label>邮箱</Label>
                 <Input
                   value={form.email}
                   onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
@@ -362,7 +362,7 @@ export default function AdminQuotationsPage() {
                 />
               </div>
               <div className="space-y-2">
-                <Label>关联 Inquiry ID（可选）</Label>
+                <Label>关联询价 ID（可选）</Label>
                 <Input
                   value={form.inquiryId}
                   onChange={(e) => setForm((prev) => ({ ...prev, inquiryId: e.target.value }))}
@@ -380,7 +380,7 @@ export default function AdminQuotationsPage() {
               {form.items.map((item, index) => (
                 <div key={index} className="rounded-xl border border-slate-200 p-3 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-slate-500">Item #{index + 1}</span>
+                    <span className="text-xs font-medium text-slate-500">明细 #{index + 1}</span>
                     {form.items.length > 1 ? (
                       <Button type="button" variant="ghost" size="sm" onClick={() => removeItem(index)}>
                         删除
@@ -436,8 +436,8 @@ export default function AdminQuotationsPage() {
             </div>
 
             <div className="rounded-xl bg-slate-50 p-3 text-sm">
-              <p>Subtotal: {form.currency} {totals.subtotal.toFixed(2)}</p>
-              <p className="font-semibold text-blue-700">Total: {form.currency} {totals.total.toFixed(2)}</p>
+              <p>小计：{form.currency} {totals.subtotal.toFixed(2)}</p>
+              <p className="font-semibold text-blue-700">合计：{form.currency} {totals.total.toFixed(2)}</p>
             </div>
 
             <div className="space-y-2">
@@ -450,7 +450,7 @@ export default function AdminQuotationsPage() {
             </div>
 
             <div className="space-y-2">
-              <Label>Terms</Label>
+              <Label>条款</Label>
               <Textarea
                 rows={4}
                 value={form.terms}

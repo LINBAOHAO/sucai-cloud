@@ -50,7 +50,7 @@ export default function AdminSettingsPage() {
   return (
     <>
       <AdminPageHeader
-        title="Settings"
+        title="设置"
         description="系统基础设置"
         action={
           <Button onClick={handleSave} disabled={saving} className="bg-blue-600 hover:bg-blue-700">

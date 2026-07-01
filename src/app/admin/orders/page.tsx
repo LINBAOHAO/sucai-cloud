@@ -109,7 +109,7 @@ export default function AdminOrdersPage() {
 
   return (
     <>
-      <AdminPageHeader title="Orders" description="订单管理与物流跟踪" />
+      <AdminPageHeader title="订单" description="订单管理与物流跟踪" />
 
       <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
         <div className="overflow-x-auto">
@@ -122,7 +122,7 @@ export default function AdminOrdersPage() {
                 <th className="px-4 py-3 font-medium">订单状态</th>
                 <th className="px-4 py-3 font-medium">付款</th>
                 <th className="px-4 py-3 font-medium">物流</th>
-                <th className="px-4 py-3 font-medium">ETA</th>
+                <th className="px-4 py-3 font-medium">预计到达</th>
                 <th className="px-4 py-3 font-medium">操作</th>
               </tr>
             </thead>
@@ -262,7 +262,7 @@ export default function AdminOrdersPage() {
                 </select>
               </Field>
 
-              <Field label="Tracking Number">
+              <Field label="物流单号">
                 <Input
                   value={form.trackingNo}
                   onChange={(e) => setForm({ ...form, trackingNo: e.target.value })}
@@ -271,7 +271,7 @@ export default function AdminOrdersPage() {
                 />
               </Field>
 
-              <Field label="ETA（预计到达）">
+              <Field label="预计到达">
                 <Input
                   type="date"
                   value={form.eta}

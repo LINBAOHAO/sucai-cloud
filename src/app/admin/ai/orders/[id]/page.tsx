@@ -92,7 +92,7 @@ export default function AdminAiOrderDetailPage() {
         <Button asChild variant="ghost" size="sm" className="text-slate-600">
           <Link href="/admin/ai/orders">
             <ArrowLeft className="size-4" />
-            返回 AI Orders
+            返回 AI 订单
           </Link>
         </Button>
       </div>
@@ -110,7 +110,7 @@ export default function AdminAiOrderDetailPage() {
           </p>
         </div>
         <div className="rounded-xl border border-slate-200 bg-white p-4">
-          <p className="text-xs text-slate-400">Incoterms</p>
+          <p className="text-xs text-slate-400">贸易术语</p>
           <p className="mt-1 font-medium text-slate-900">{order.incoterms || "—"}</p>
         </div>
         <div className="rounded-xl border border-slate-200 bg-white p-4">
@@ -178,7 +178,7 @@ export default function AdminAiOrderDetailPage() {
                     <li key={file.id} className="flex justify-between text-slate-700">
                       <span>
                         {file.fileName}{" "}
-                        <span className="text-slate-400">({file.fileType}, {file.parsedLineCount} lines)</span>
+                        <span className="text-slate-400">({file.fileType}，{file.parsedLineCount} 行)</span>
                       </span>
                       <span className="text-slate-400">{new Date(file.createdAt).toLocaleDateString()}</span>
                     </li>
@@ -200,7 +200,7 @@ export default function AdminAiOrderDetailPage() {
                   {suppliers.map((s, i) => (
                     <li key={i}>
                       {s.companyName} — {s.productName}
-                      {s.score != null ? ` (score ${s.score})` : ""}
+                      {s.score != null ? `（评分 ${s.score}）` : ""}
                     </li>
                   ))}
                 </ul>

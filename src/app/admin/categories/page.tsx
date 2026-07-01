@@ -70,7 +70,7 @@ export default function AdminCategoriesPage() {
   return (
     <>
       <AdminPageHeader
-        title="Categories"
+        title="分类"
         description="产品分类管理"
         action={
           <Button onClick={openCreate} className="bg-blue-600 hover:bg-blue-700">

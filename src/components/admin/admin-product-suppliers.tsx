@@ -122,7 +122,7 @@ export function AdminProductSuppliers({ productId }: AdminProductSuppliersProps)
       <div>
         <Label className="text-base font-semibold text-slate-800">供应商 & 采购价</Label>
         <p className="mt-1 text-xs text-slate-500">
-          一个产品可绑定多个供应商，各自设置采购价；仅一个 Preferred Supplier。
+          一个产品可绑定多个供应商，各自设置采购价；仅一个首选供应商。
         </p>
       </div>
 
@@ -156,7 +156,7 @@ export function AdminProductSuppliers({ productId }: AdminProductSuppliersProps)
                     {link.preferred ? (
                       <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">
                         <Star className="size-3 fill-amber-500 text-amber-500" />
-                        Preferred
+                        首选
                       </span>
                     ) : (
                       <Button
@@ -255,7 +255,7 @@ export function AdminProductSuppliers({ productId }: AdminProductSuppliersProps)
                   onChange={(e) => setForm({ ...form, preferred: e.target.checked })}
                   className="rounded border-slate-300"
                 />
-                设为 Preferred
+                设为首选
               </label>
             </div>
           </div>

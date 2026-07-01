@@ -110,8 +110,8 @@ export default function AdminCustomersPage() {
   return (
     <>
       <AdminPageHeader
-        title="Customers"
-        description="客户 CRM 管理"
+        title="客户"
+        description="客户管理"
         action={
           <Button onClick={openCreate} className="bg-blue-600 hover:bg-blue-700">
             <Plus className="h-4 w-4" />
@@ -138,7 +138,7 @@ export default function AdminCustomersPage() {
                 <th className="px-4 py-3 font-medium">公司名称</th>
                 <th className="px-4 py-3 font-medium">联系人</th>
                 <th className="px-4 py-3 font-medium">WhatsApp</th>
-                <th className="px-4 py-3 font-medium">Email</th>
+                <th className="px-4 py-3 font-medium">邮箱</th>
                 <th className="px-4 py-3 font-medium">国家/城市</th>
                 <th className="px-4 py-3 font-medium">操作</th>
               </tr>
@@ -234,7 +234,7 @@ function CustomerForm({
           className="border-slate-200 bg-white"
         />
       </Field>
-      <Field label="Email">
+      <Field label="邮箱">
         <Input
           type="email"
           value={form.email}

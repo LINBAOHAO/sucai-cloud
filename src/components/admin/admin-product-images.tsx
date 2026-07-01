@@ -76,7 +76,7 @@ export function AdminProductImages({ productId }: AdminProductImagesProps) {
   };
 
   const handleDelete = async (imageId: string) => {
-    if (!confirm("确定删除该图片？Storage 文件与数据库记录将一并删除。")) return;
+    if (!confirm("确定删除该图片？存储文件与数据库记录将一并删除。")) return;
 
     const res = await fetch(`/api/admin/products/${productId}/images/${imageId}`, {
       method: "DELETE",
@@ -161,7 +161,7 @@ export function AdminProductImages({ productId }: AdminProductImagesProps) {
               )}
             >
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-slate-100">
-                <Image src={image.url} alt={image.alt ?? "Product image"} fill className="object-cover" sizes="80px" />
+                <Image src={image.url} alt={image.alt ?? "产品图片"} fill className="object-cover" sizes="80px" />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-between">
                 <div className="text-xs text-slate-500">

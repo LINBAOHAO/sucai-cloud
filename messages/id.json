@@ -9,8 +9,8 @@
     "brands": "Merek",
     "about": "Tentang Kami",
     "contact": "Kontak",
-    "login": "Masuk",
-    "register": "Daftar",
+    "contactUs": "Hubungi Kami",
+    "getQuote": "Minta Penawaran",
     "language": "Bahasa",
     "whatsapp": "WhatsApp",
     "whatsappMessage": "Halo, saya ingin bertanya tentang pengadaan perlengkapan industri. Bisakah Anda membantu?"
@@ -171,7 +171,10 @@
       "companyPlaceholder": "Masukkan nama perusahaan",
       "emailPlaceholder": "your@email.com",
       "phonePlaceholder": "+62 xxx xxxx xxxx",
-      "messagePlaceholder": "Jelaskan kebutuhan pengadaan Anda..."
+      "messagePlaceholder": "Jelaskan kebutuhan pengadaan Anda...",
+      "successTitle": "Berhasil Dikirim",
+      "successMessage": "Pesan Anda telah dikirim. Kami akan menghubungi Anda dalam 24 jam.",
+      "submitAnother": "Kirim Lagi"
     },
     "info": {
       "address": "Alamat",
@@ -220,6 +223,7 @@
     },
     "title": "Pusat Produk",
     "subtitle": "Perlengkapan industri lengkap dengan filter kategori dan permintaan penawaran massal",
+    "quoteHint": "Pilih produk di bawah, lalu klik \"Minta Penawaran\" pada kartu produk untuk mengajukan inquiry.",
     "searchPlaceholder": "Cari nama produk, merek, model...",
     "searchButton": "Cari",
     "filters": {
@@ -300,6 +304,10 @@
       "reset": "Hapus Filter"
     },
     "mobileCategories": "Kategori",
+    "brandsTitle": "Merek",
+    "brands": {
+      "all": "Semua merek"
+    },
     "items": {
       "p1": { "name": "Gerinda Sudut Industri", "description": "Gerinda sudut industri BOSCH 750W, ideal untuk pemotongan dan penggerindaan logam. Bersertifikat CE untuk pengadaan pabrik." },
       "p2": { "name": "Gerinda Sudut Profesional", "description": "Gerinda sudut profesional Makita dengan dissipasi panas efisien untuk operasi stabil dalam waktu lama." },
@@ -323,19 +331,40 @@
     "updatedAt": "Terakhir Diperbarui",
     "specsTitle": "Spesifikasi Produk",
     "descTitle": "Deskripsi Produk",
-    "recommendedTitle": "Produk Rekomendasi",
+    "recommendedTitle": "Produk Terkait",
     "inquiry": "Minta Penawaran",
     "whatsapp": "Hubungi WhatsApp",
     "whatsappMessage": "Halo, saya ingin bertanya tentang pembelian \"{productName}\". Bisakah Anda membantu?",
     "backToList": "Kembali ke Daftar Produk",
     "inquiryHint": "Setelah mengirim permintaan penawaran, konsultan pengadaan kami akan menghubungi Anda dalam 24 jam",
+    "labels": {
+      "brand": "Merek",
+      "model": "Model",
+      "category": "Kategori",
+      "stock": "Status Stok",
+      "shipFrom": "Pengiriman Dari",
+      "moq": "MOQ",
+      "deliveryTime": "Waktu Pengiriman",
+      "summary": "Ringkasan Produk"
+    },
+    "stock": {
+      "inStock": "Stok Tersedia",
+      "preOrder": "Pesan Dulu"
+    },
+    "tabs": {
+      "introduction": "Deskripsi Produk",
+      "specs": "Spesifikasi Teknis",
+      "applications": "Industri Aplikasi",
+      "packaging": "Kemasan & Pengiriman"
+    },
     "specLabels": {
-      "voltage": "Tegangan",
-      "power": "Daya",
+      "brand": "Merek",
+      "model": "Model",
       "material": "Material",
       "dimensions": "Dimensi",
       "weight": "Berat",
-      "certification": "Sertifikasi"
+      "certification": "Sertifikasi",
+      "origin": "Asal"
     },
     "items": {
       "p1": {
@@ -386,6 +415,93 @@
         "longDescription": "Kotak perkakas industri Makita STST19405 kapasitas besar, kokoh dan tahan lama untuk logistik gudang dan operasi lapangan. Desain kompartemen multi-layer untuk penyimpanan terorganisir. Kunci kuat untuk transportasi aman. Ideal untuk tim engineering dan departemen maintenance.",
         "specs": { "voltage": "—", "power": "—", "material": "Komposit PP + ABS", "dimensions": "495 × 396 × 251 mm", "weight": "4,8 kg", "certification": "CE, Makita Asli" }
       }
+    }
+  },
+  "inquiry": {
+    "title": "Permintaan Penawaran",
+    "subtitle": "Isi informasi di bawah ini dan kami akan menyiapkan penawaran untuk Anda",
+    "successTitle": "Berhasil Dikirim",
+    "successMessage": "Permintaan penawaran Anda telah dikirim. Kami akan menghubungi Anda dalam 24 jam.",
+    "submit": "Kirim Permintaan",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "fields": {
+      "companyName": "Nama Perusahaan",
+      "contactName": "Kontak Person",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "country": "Negara",
+      "productName": "Nama Produk",
+      "productModel": "Model Produk",
+      "quantity": "Jumlah Pembelian",
+      "notes": "Catatan"
+    },
+    "placeholders": {
+      "companyName": "Masukkan nama perusahaan",
+      "contactName": "Masukkan nama kontak",
+      "email": "your@email.com",
+      "whatsapp": "+62 xxx xxxx xxxx",
+      "country": "contoh: Indonesia",
+      "quantity": "contoh: 100 unit",
+      "notes": "Tambahkan spesifikasi, waktu pengiriman, atau kebutuhan lain..."
+    },
+    "errors": {
+      "required": "Field ini wajib diisi"
+    }
+  },
+  "procurementAssistant": {
+    "title": "AI Procurement Assistant",
+    "fabLabel": "Asisten Pengadaan AI",
+    "start": "Mulai",
+    "skip": "Lewati",
+    "confirm": "Konfirmasi & Kirim",
+    "confirmGenerate": "Generate Penawaran Resmi & PDF",
+    "modifyOrder": "Ubah Pesanan",
+    "uploadPo": "Upload PO",
+    "close": "Tutup",
+    "submitting": "Memproses...",
+    "successTitle": "Terima kasih.",
+    "successMessage": "Tim kami akan segera menghubungi Anda melalui WhatsApp.",
+    "quotationReady": "Penawaran resmi telah dibuat.",
+    "downloadPdf": "Unduh PDF Penawaran",
+    "sendWhatsApp": "Kirim via WhatsApp",
+    "emailSent": "PDF juga telah dikirim ke email Anda.",
+    "parseIntro": "Saya telah menganalisis pesanan Anda:",
+    "parseProducts": "Produk teridentifikasi",
+    "parseQuantity": "Jumlah",
+    "parsePrice": "Total harga barang",
+    "parseShipping": "Estimasi freight",
+    "parseTotal": "Total penawaran (CIF)",
+    "parseDays": "hari pengiriman",
+    "errorMessage": "Gagal memproses. Silakan coba lagi.",
+    "steps": {
+      "welcome": "Halo! Saya Asisten Pengadaan AI SuCai Cloud.\n\nTempel pesanan lengkap Anda, contoh:\nBosch GWS750-100 ×20\nMakita 9557NB ×10\n送到 Morowali\nCIF\n7天内发货",
+      "order": "Silakan tempel pesanan lengkap Anda (produk, jumlah, kota tujuan, CIF/FOB, waktu pengiriman):",
+      "company": "Nama perusahaan Anda?",
+      "contactName": "Siapa nama kontak person?",
+      "whatsapp": "Nomor WhatsApp Anda?",
+      "email": "Email Anda? (opsional — untuk kirim PDF otomatis)",
+      "confirmIntro": "Silakan periksa penawaran berikut:"
+    },
+    "placeholders": {
+      "order": "Bosch GWS750-100 ×20\nMakita 9557NB ×10\n送到 Morowali\nCIF\n7天内发货",
+      "company": "contoh: PT Example",
+      "contactName": "contoh: Budi Santoso",
+      "whatsapp": "+62 xxx xxxx xxxx",
+      "email": "your@email.com"
+    },
+    "labels": {
+      "productName": "Nama Produk",
+      "quantity": "Jumlah",
+      "destinationCity": "Kota Tujuan",
+      "company": "Perusahaan",
+      "contactName": "Kontak",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "message": "Catatan"
+    },
+    "errors": {
+      "required": "Mohon isi field ini"
     }
   }
 }

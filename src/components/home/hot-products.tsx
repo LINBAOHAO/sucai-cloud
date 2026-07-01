@@ -1,94 +1,117 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, MapPin, MessageSquareQuote } from "lucide-react";
+import { ArrowRight, Eye, MapPin, MessageSquareQuote } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FadeIn, SectionHeader, staggerContainer, staggerItem } from "@/components/motion/fade-in";
-import { ProductPlaceholder } from "@/components/home/product-placeholder";
+import { SectionHeader } from "@/components/motion/fade-in";
+import { ProductThumbnail } from "@/components/products/product-thumbnail";
+import type { HomeFeaturedProduct } from "@/lib/home-content";
 import {
+  homeFeaturedProductNames,
+  homeFeaturedProducts,
   homeHotProducts,
-  locationLabels,
-  productNames,
+  indonesiaShipLocations,
 } from "@/lib/home-content";
-import { getBrandLabel, mockProducts } from "@/lib/mock-products";
 import type { Locale } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
 
-const featuredProducts = [...mockProducts]
-  .sort((a, b) => b.hotScore - a.hotScore)
-  .slice(0, 8);
+export type HomeFeaturedProductView = HomeFeaturedProduct & {
+  primaryImageUrl?: string | null;
+};
 
-export function HotProducts() {
+interface HotProductsProps {
+  products?: HomeFeaturedProductView[];
+}
+
+export function HotProducts({ products = homeFeaturedProducts }: HotProductsProps) {
   const locale = useLocale() as Locale;
   const content = homeHotProducts[locale];
-  const locations = locationLabels[locale];
-  const names = productNames[locale];
+  const names = homeFeaturedProductNames[locale];
 
   return (
-    <section id="products" className="section-padding relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 via-transparent to-transparent" />
+    <section id="hot-products" className="section-padding relative bg-white text-slate-900">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.04),transparent_70%)]" />
 
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader title={content.title} subtitle={content.subtitle} />
 
-        <motion.div
-          variants={staggerContainer}
-          initial={false}
-          animate="visible"
-          className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
-        >
-          {featuredProducts.map((product) => {
-            const name = names[product.id] ?? product.model;
-            const location = locations[product.location] ?? product.location;
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {products.map((product) => {
+            const name = names[product.id];
+            const shipLabel = indonesiaShipLocations[product.shipFrom][locale];
+            const statusLabel =
+              product.status === "inStock"
+                ? content.statusInStock
+                : content.statusPreOrder;
 
             return (
-              <motion.div
+              <article
                 key={product.id}
-                variants={staggerItem}
-                initial={false}
-                animate="visible"
+                className={cn(
+                  "group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md shadow-slate-200/50",
+                  "transition-all duration-300 ease-out",
+                  "hover:-translate-y-1.5 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-100/80",
+                )}
               >
-                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-100/80">
-                  <Link href={`/products/${product.slug}`} className="block">
-                    <ProductPlaceholder
-                      label={name}
-                      className="aspect-[4/3] rounded-none bg-gradient-to-br from-slate-100 via-blue-50 to-slate-100"
-                    />
+                <Link href={`/products/${product.slug}`} className="relative block">
+                  <ProductThumbnail
+                    imageUrl={product.primaryImageUrl}
+                    label={name}
+                    className="aspect-[4/3] rounded-none bg-gradient-to-br from-slate-100 via-blue-50/80 to-slate-50"
+                  />
+                  <span
+                    className={cn(
+                      "absolute top-3 left-3 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1",
+                      product.status === "inStock"
+                        ? "bg-emerald-500/90 text-white ring-emerald-400/50"
+                        : "bg-blue-500/90 text-white ring-blue-400/50",
+                    )}
+                  >
+                    {statusLabel}
+                  </span>
+                </Link>
+
+                <div className="flex flex-1 flex-col p-4 sm:p-5">
+                  <Link href={`/products/${product.slug}`}>
+                    <h3 className="mb-3 line-clamp-2 text-sm font-semibold leading-snug text-slate-900 transition-colors group-hover:text-blue-700 sm:text-base">
+                      {name}
+                    </h3>
                   </Link>
 
-                  <div className="flex flex-1 flex-col p-4">
-                    <Link href={`/products/${product.slug}`}>
-                      <h3 className="mb-3 line-clamp-2 text-sm font-semibold leading-snug text-slate-900 transition-colors group-hover:text-blue-700">
-                        {name}
-                      </h3>
-                    </Link>
-
-                    <div className="mb-4 space-y-2 text-xs">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-slate-500">{content.brand}</span>
-                        <span className="truncate font-medium text-blue-600">
-                          {getBrandLabel(product.brandId)}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-slate-500">{content.model}</span>
-                        <span className="truncate font-medium text-slate-800">
-                          {product.model}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-slate-500">{content.location}</span>
-                        <span className="flex items-center gap-1 truncate font-medium text-slate-700">
-                          <MapPin className="h-3 w-3 shrink-0 text-blue-500" />
-                          {location}
-                        </span>
-                      </div>
+                  <dl className="mb-4 space-y-2 text-xs sm:text-sm">
+                    <div className="flex items-center justify-between gap-2">
+                      <dt className="text-slate-500">{content.brand}</dt>
+                      <dd className="truncate font-medium text-blue-600">{product.brand}</dd>
                     </div>
+                    <div className="flex items-center justify-between gap-2">
+                      <dt className="text-slate-500">{content.model}</dt>
+                      <dd className="truncate font-medium text-slate-800">{product.model}</dd>
+                    </div>
+                    <div className="flex items-center justify-between gap-2">
+                      <dt className="text-slate-500">{content.location}</dt>
+                      <dd className="flex items-center gap-1 truncate font-medium text-slate-700">
+                        <MapPin className="h-3.5 w-3.5 shrink-0 text-blue-500" />
+                        {shipLabel}
+                      </dd>
+                    </div>
+                  </dl>
 
+                  <div className="mt-auto flex flex-col gap-2 sm:flex-row">
                     <Button
                       size="sm"
-                      className="mt-auto w-full bg-orange-500 shadow-md shadow-orange-500/20 hover:bg-orange-400"
+                      variant="outline"
+                      className="flex-1 border-blue-200 text-blue-700 hover:bg-blue-50"
+                      asChild
+                    >
+                      <Link href={`/products/${product.slug}`}>
+                        <Eye className="h-4 w-4" />
+                        {content.viewDetail}
+                      </Link>
+                    </Button>
+                    <Button
+                      size="sm"
+                      className="flex-1 bg-orange-500 shadow-md shadow-orange-500/20 hover:bg-orange-400"
                       asChild
                     >
                       <Link href="/contact">
@@ -98,12 +121,12 @@ export function HotProducts() {
                     </Button>
                   </div>
                 </div>
-              </motion.div>
+              </article>
             );
           })}
-        </motion.div>
+        </div>
 
-        <FadeIn className="mt-10 text-center">
+        <div className="mt-10 text-center">
           <Button
             variant="outline"
             size="lg"
@@ -115,7 +138,7 @@ export function HotProducts() {
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

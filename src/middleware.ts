@@ -1,13 +1,38 @@
+import { type NextRequest, NextResponse } from "next/server";
 import createMiddleware from "next-intl/middleware";
+import { ADMIN_SESSION_COOKIE, validateAdminSession } from "@/lib/admin/admin-session";
 import { routing } from "./i18n/routing";
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+export default async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith("/admin")) {
+    const isLoginPage = pathname === "/admin/login";
+    const session = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;
+    const isAuthed = await validateAdminSession(session);
+
+    if (!isLoginPage && !isAuthed) {
+      const loginUrl = new URL("/admin/login", request.url);
+      loginUrl.searchParams.set("from", pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    if (isLoginPage && isAuthed) {
+      return NextResponse.redirect(new URL("/admin", request.url));
+    }
+
+    return NextResponse.next();
+  }
+
+  return intlMiddleware(request);
+}
 
 export const config = {
   matcher: [
-    // Required for localePrefix: "as-needed" — match unprefixed pathnames
-    "/((?!api|_next|_vercel|.*\\..*).*)",
-    // Explicit root (needed for some basePath / edge cases)
+    "/admin/:path*",
+    "/((?!api|_next|_vercel|admin|.*\\..*).*)",
     "/",
   ],
 };

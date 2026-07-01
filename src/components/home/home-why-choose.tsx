@@ -1,13 +1,13 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { motion } from "framer-motion";
-import { CheckCircle2, Globe2, Timer, Warehouse } from "lucide-react";
-import { SectionHeader, staggerContainer, staggerItem } from "@/components/motion/fade-in";
+import { FileText, Globe, Users, Warehouse } from "lucide-react";
+import { SectionHeader } from "@/components/motion/fade-in";
 import { homeWhyChoose } from "@/lib/home-content";
 import type { Locale } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
 
-const icons = [Warehouse, Globe2, Timer, CheckCircle2];
+const icons = [Warehouse, Globe, FileText, Users];
 
 export function HomeWhyChoose() {
   const locale = useLocale() as Locale;
@@ -20,38 +20,27 @@ export function HomeWhyChoose() {
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader title={content.title} subtitle={content.subtitle} />
 
-        <motion.div
-          variants={staggerContainer}
-          initial={false}
-          animate="visible"
-          className="grid gap-5 sm:grid-cols-2 lg:gap-6"
-        >
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-4 lg:gap-6">
           {content.items.map((item, index) => {
             const Icon = icons[index];
             return (
-              <motion.div
+              <article
                 key={item.title}
-                variants={staggerItem}
-                initial={false}
-                animate="visible"
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:border-blue-200 hover:shadow-md hover:shadow-blue-100/50 sm:p-8"
+                className={cn(
+                  "group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-6 shadow-md shadow-slate-200/50 sm:p-8",
+                  "transition-all duration-300 ease-out",
+                  "hover:-translate-y-1.5 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-100/80",
+                )}
               >
-                <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-600/20">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="mb-2 flex items-center gap-2 text-lg font-semibold text-slate-900">
-                      <CheckCircle2 className="h-4 w-4 shrink-0 text-orange-500" />
-                      {item.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
-                  </div>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-600/20 transition-transform duration-300 group-hover:scale-110">
+                  <Icon className="h-6 w-6" />
                 </div>
-              </motion.div>
+                <h3 className="mb-2 text-lg font-semibold text-slate-900">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
+              </article>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

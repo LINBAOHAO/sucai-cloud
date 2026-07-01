@@ -9,8 +9,8 @@
     "brands": "Brands",
     "about": "About Us",
     "contact": "Contact",
-    "login": "Login",
-    "register": "Register",
+    "contactUs": "Contact Us",
+    "getQuote": "Get Quote",
     "language": "Language",
     "whatsapp": "WhatsApp",
     "whatsappMessage": "Hello, I'd like to inquire about industrial supplies procurement. Can you help?"
@@ -171,7 +171,10 @@
       "companyPlaceholder": "Enter company name",
       "emailPlaceholder": "your@email.com",
       "phonePlaceholder": "+62 xxx xxxx xxxx",
-      "messagePlaceholder": "Describe your procurement needs..."
+      "messagePlaceholder": "Describe your procurement needs...",
+      "successTitle": "Submitted Successfully",
+      "successMessage": "Your message has been submitted. We will contact you within 24 hours.",
+      "submitAnother": "Submit Another"
     },
     "info": {
       "address": "Address",
@@ -220,6 +223,7 @@
     },
     "title": "Product Center",
     "subtitle": "Full-range industrial supplies with category filters and bulk inquiry",
+    "quoteHint": "Select a product below and click \"Get Quote\" on the card to submit your inquiry.",
     "searchPlaceholder": "Search product name, brand, model...",
     "searchButton": "Search",
     "filters": {
@@ -300,6 +304,10 @@
       "reset": "Clear Filters"
     },
     "mobileCategories": "Categories",
+    "brandsTitle": "Brands",
+    "brands": {
+      "all": "All brands"
+    },
     "items": {
       "p1": { "name": "Industrial Angle Grinder", "description": "BOSCH industrial angle grinder, 750W power, ideal for metal cutting and grinding. CE certified for bulk factory procurement." },
       "p2": { "name": "Professional Angle Grinder", "description": "Makita professional angle grinder with efficient heat dissipation for stable long-hour operation." },
@@ -323,19 +331,40 @@
     "updatedAt": "Last Updated",
     "specsTitle": "Specifications",
     "descTitle": "Product Description",
-    "recommendedTitle": "Recommended Products",
+    "recommendedTitle": "Related Products",
     "inquiry": "Request Quote",
     "whatsapp": "WhatsApp Contact",
     "whatsappMessage": "Hello, I'd like to inquire about purchasing \"{productName}\". Can you help?",
     "backToList": "Back to Products",
     "inquiryHint": "After submitting an inquiry, our procurement advisor will contact you within 24 hours",
+    "labels": {
+      "brand": "Brand",
+      "model": "Model",
+      "category": "Category",
+      "stock": "Availability",
+      "shipFrom": "Ship From",
+      "moq": "MOQ",
+      "deliveryTime": "Lead Time",
+      "summary": "Overview"
+    },
+    "stock": {
+      "inStock": "In Stock",
+      "preOrder": "Available to Order"
+    },
+    "tabs": {
+      "introduction": "Description",
+      "specs": "Specifications",
+      "applications": "Applications",
+      "packaging": "Packaging & Shipping"
+    },
     "specLabels": {
-      "voltage": "Voltage",
-      "power": "Power",
+      "brand": "Brand",
+      "model": "Model",
       "material": "Material",
       "dimensions": "Dimensions",
       "weight": "Weight",
-      "certification": "Certification"
+      "certification": "Certification",
+      "origin": "Origin"
     },
     "items": {
       "p1": {
@@ -386,6 +415,93 @@
         "longDescription": "Makita STST19405 large-capacity industrial tool box, rugged and durable for warehouse logistics and field operations. Multi-layer compartment design for organized tool storage. High-strength latches for safe transport. Ideal for engineering teams and maintenance departments.",
         "specs": { "voltage": "—", "power": "—", "material": "PP + ABS composite", "dimensions": "495 × 396 × 251 mm", "weight": "4.8 kg", "certification": "CE, Makita Genuine" }
       }
+    }
+  },
+  "inquiry": {
+    "title": "Request a Quote",
+    "subtitle": "Fill in the details below and we will prepare a quotation for you",
+    "successTitle": "Submitted Successfully",
+    "successMessage": "Your inquiry has been submitted. We will contact you within 24 hours.",
+    "submit": "Submit Inquiry",
+    "cancel": "Cancel",
+    "close": "Close",
+    "fields": {
+      "companyName": "Company Name",
+      "contactName": "Contact Person",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "country": "Country",
+      "productName": "Product Name",
+      "productModel": "Model",
+      "quantity": "Quantity",
+      "notes": "Notes"
+    },
+    "placeholders": {
+      "companyName": "Enter company name",
+      "contactName": "Enter contact name",
+      "email": "your@email.com",
+      "whatsapp": "+62 xxx xxxx xxxx",
+      "country": "e.g. Indonesia",
+      "quantity": "e.g. 100 units",
+      "notes": "Add specs, lead time, or other requirements..."
+    },
+    "errors": {
+      "required": "This field is required"
+    }
+  },
+  "procurementAssistant": {
+    "title": "AI Procurement Assistant",
+    "fabLabel": "AI Procurement Assistant",
+    "start": "Start",
+    "skip": "Skip",
+    "confirm": "Confirm & Submit",
+    "confirmGenerate": "Generate Official Quotation & PDF",
+    "modifyOrder": "Modify Order",
+    "uploadPo": "Upload PO",
+    "close": "Close",
+    "submitting": "Processing...",
+    "successTitle": "Thank you.",
+    "successMessage": "Our team will contact you via WhatsApp shortly.",
+    "quotationReady": "Official quotation has been created.",
+    "downloadPdf": "Download Quotation PDF",
+    "sendWhatsApp": "Send via WhatsApp",
+    "emailSent": "PDF has also been sent to your email.",
+    "parseIntro": "I've analyzed your order:",
+    "parseProducts": "Products identified",
+    "parseQuantity": "Quantities",
+    "parsePrice": "Goods subtotal",
+    "parseShipping": "Freight estimate",
+    "parseTotal": "Quotation total (CIF)",
+    "parseDays": "days delivery",
+    "errorMessage": "Processing failed. Please try again.",
+    "steps": {
+      "welcome": "Hello! I'm the SuCai Cloud AI Procurement Assistant.\n\nPaste your full order, e.g.:\nBosch GWS750-100 ×20\nMakita 9557NB ×10\nDeliver to Morowali\nCIF\nShip within 7 days",
+      "order": "Paste your full order (products, qty, destination, CIF/FOB, lead time):",
+      "company": "Your company name?",
+      "contactName": "Contact person name?",
+      "whatsapp": "Your WhatsApp number?",
+      "email": "Your email? (optional — auto-send PDF)",
+      "confirmIntro": "Please review this quotation:"
+    },
+    "placeholders": {
+      "order": "Bosch GWS750-100 ×20\nMakita 9557NB ×10\nDeliver to Morowali\nCIF\nShip within 7 days",
+      "company": "e.g. PT Example",
+      "contactName": "e.g. John Doe",
+      "whatsapp": "+62 xxx xxxx xxxx",
+      "email": "your@email.com"
+    },
+    "labels": {
+      "productName": "Product",
+      "quantity": "Quantity",
+      "destinationCity": "Destination City",
+      "company": "Company",
+      "contactName": "Contact",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "message": "Notes"
+    },
+    "errors": {
+      "required": "This field is required"
     }
   }
 }

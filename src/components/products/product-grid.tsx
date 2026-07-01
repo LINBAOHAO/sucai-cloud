@@ -8,10 +8,11 @@ import type { MockProduct } from "@/lib/product-types";
 
 interface ProductGridProps {
   products: MockProduct[];
+  brandLabels: Record<string, string>;
   onReset?: () => void;
 }
 
-export function ProductGrid({ products, onReset }: ProductGridProps) {
+export function ProductGrid({ products, brandLabels, onReset }: ProductGridProps) {
   const t = useTranslations("productsPage");
 
   if (products.length === 0) {
@@ -31,8 +32,8 @@ export function ProductGrid({ products, onReset }: ProductGridProps) {
 
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-      {products.map((product, index) => (
-        <ProductCard key={product.id} product={product} index={index} />
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} brandLabels={brandLabels} />
       ))}
     </div>
   );

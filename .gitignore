@@ -21,6 +21,11 @@
 # misc
 .DS_Store
 *.pem
+/uploads/
+.vercel
+
+# runtime-generated quotation PDFs (keep directory via .gitkeep)
+/public/quotations/*.pdf
 
 # debug
 npm-debug.log*
@@ -29,6 +34,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files
+.env
 .env*.local
 
 # typescript

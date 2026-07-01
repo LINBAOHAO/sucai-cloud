@@ -14,7 +14,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { productCategories } from "@/lib/data";
+import type { AdminCategory } from "@/lib/admin/types";
 import type { CategoryId } from "@/lib/product-types";
 import { cn } from "@/lib/utils";
 
@@ -30,6 +30,7 @@ const iconMap = {
 } as const;
 
 interface ProductCategoryTreeProps {
+  categories: AdminCategory[];
   selected: CategoryId | "all";
   onSelect: (category: CategoryId | "all") => void;
   counts: Record<string, number>;
@@ -37,6 +38,7 @@ interface ProductCategoryTreeProps {
 }
 
 export function ProductCategoryTree({
+  categories,
   selected,
   onSelect,
   counts,
@@ -57,6 +59,7 @@ export function ProductCategoryTree({
       <ul className="p-2">
         <li>
           <button
+            type="button"
             onClick={() => onSelect("all")}
             className={cn(
               "group flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200",
@@ -76,12 +79,13 @@ export function ProductCategoryTree({
             </span>
           </button>
         </li>
-        {productCategories.map((cat) => {
-          const Icon = iconMap[cat.icon as keyof typeof iconMap];
+        {categories.map((cat) => {
+          const Icon = iconMap[cat.icon as keyof typeof iconMap] ?? LayoutGrid;
           const isActive = selected === cat.id;
           return (
             <li key={cat.id}>
               <button
+                type="button"
                 onClick={() => onSelect(cat.id)}
                 className={cn(
                   "group flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200",
@@ -96,7 +100,7 @@ export function ProductCategoryTree({
                     isActive ? "text-orange-400" : "text-muted-foreground group-hover:text-orange-400/70",
                   )}
                 />
-                <span className="flex-1 truncate font-medium">{t(`categories.${cat.id}`)}</span>
+                <span className="flex-1 truncate font-medium">{cat.name}</span>
                 <span
                   className={cn(
                     "rounded-full px-2 py-0.5 text-xs",

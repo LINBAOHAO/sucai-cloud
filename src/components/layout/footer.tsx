@@ -4,10 +4,13 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { Cloud, Mail, Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useSiteSettings } from "@/components/providers/site-settings-provider";
+import { BrandName } from "@/components/layout/brand-name";
 
 export function Footer() {
   const t = useTranslations("footer");
   const locale = useLocale();
+  const settings = useSiteSettings();
   const year = new Date().getFullYear();
 
   const productLinks = ["hardware", "electrical", "safety", "tools"] as const;
@@ -22,16 +25,14 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="mb-4 flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-orange-500 to-amber-500">
-                <Cloud className="h-5 w-5 text-white" />
+                {settings.logo ? (
+                  <span className="text-xs font-bold text-white">{settings.logo}</span>
+                ) : (
+                  <Cloud className="h-5 w-5 text-white" />
+                )}
               </div>
               <span className="text-lg font-bold">
-                {locale === "zh" ? (
-                  <span className="text-gradient">速采云</span>
-                ) : (
-                  <>
-                    Su<span className="text-gradient">Cai</span> Cloud
-                  </>
-                )}
+                <BrandName siteName={settings.siteName} locale={locale} />
               </span>
             </Link>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -40,15 +41,15 @@ export function Footer() {
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                contact@sucaicloud.com
+                {settings.contactEmail}
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                +62 21 1234 5678
+                {settings.whatsapp}
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                Jakarta · Shenzhen
+                {settings.address}
               </div>
             </div>
           </div>

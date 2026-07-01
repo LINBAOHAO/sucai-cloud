@@ -2,7 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { contactConfig } from "@/lib/contact-config";
+import { getWhatsAppUrl } from "@/lib/contact-config";
+import { useSiteSettings } from "@/components/providers/site-settings-provider";
 import { WhatsAppIcon } from "./whatsapp-icon";
 
 interface WhatsAppButtonProps {
@@ -12,7 +13,8 @@ interface WhatsAppButtonProps {
 
 export function WhatsAppButton({ className, size = "default" }: WhatsAppButtonProps) {
   const t = useTranslations("nav");
-  const url = contactConfig.whatsapp.getUrl(t("whatsappMessage"));
+  const settings = useSiteSettings();
+  const url = getWhatsAppUrl(settings.whatsapp, t("whatsappMessage"));
 
   return (
     <a

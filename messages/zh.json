@@ -9,8 +9,8 @@
     "brands": "品牌中心",
     "about": "关于我们",
     "contact": "联系我们",
-    "login": "登录",
-    "register": "注册",
+    "contactUs": "联系我们",
+    "getQuote": "立即询价",
     "language": "选择语言",
     "whatsapp": "WhatsApp 咨询",
     "whatsappMessage": "您好，我想咨询工业用品采购，请问可以帮忙吗？"
@@ -171,7 +171,10 @@
       "companyPlaceholder": "请输入公司名称",
       "emailPlaceholder": "your@email.com",
       "phonePlaceholder": "+62 xxx xxxx xxxx",
-      "messagePlaceholder": "请描述您的采购需求..."
+      "messagePlaceholder": "请描述您的采购需求...",
+      "successTitle": "提交成功",
+      "successMessage": "您的咨询已提交，我们将在24小时内联系您。",
+      "submitAnother": "继续提交"
     },
     "info": {
       "address": "地址",
@@ -220,6 +223,7 @@
     },
     "title": "产品中心",
     "subtitle": "全品类工业用品，支持分类筛选、批量询价",
+    "quoteHint": "请在下方选择产品，点击产品卡片上的「立即询价」提交询价需求。",
     "searchPlaceholder": "搜索产品名称、品牌、型号...",
     "searchButton": "搜索",
     "filters": {
@@ -300,6 +304,10 @@
       "reset": "清除筛选"
     },
     "mobileCategories": "产品分类",
+    "brandsTitle": "品牌筛选",
+    "brands": {
+      "all": "全部品牌"
+    },
     "items": {
       "p1": { "name": "工业级角磨机", "description": "BOSCH 工业级角磨机，750W 功率，适用于金属切割与打磨，通过 CE 认证，适合工厂批量采购。" },
       "p2": { "name": "专业级角磨机", "description": "Makita 专业级角磨机，高效散热设计，长时间连续作业稳定可靠。" },
@@ -323,19 +331,40 @@
     "updatedAt": "更新时间",
     "specsTitle": "产品参数",
     "descTitle": "产品描述",
-    "recommendedTitle": "推荐商品",
+    "recommendedTitle": "相关推荐",
     "inquiry": "立即询价",
     "whatsapp": "WhatsApp 联系",
     "whatsappMessage": "您好，我想咨询「{productName}」的采购信息，请问可以帮忙吗？",
     "backToList": "返回产品列表",
     "inquiryHint": "提交询价后，我们的采购顾问将在 24 小时内与您联系",
+    "labels": {
+      "brand": "品牌",
+      "model": "型号",
+      "category": "分类",
+      "stock": "库存状态",
+      "shipFrom": "发货地",
+      "moq": "最小起订量",
+      "deliveryTime": "交货时间",
+      "summary": "产品简介"
+    },
+    "stock": {
+      "inStock": "现货",
+      "preOrder": "可订货"
+    },
+    "tabs": {
+      "introduction": "产品介绍",
+      "specs": "技术参数",
+      "applications": "应用行业",
+      "packaging": "包装运输"
+    },
     "specLabels": {
-      "voltage": "电压",
-      "power": "功率",
+      "brand": "品牌",
+      "model": "型号",
       "material": "材质",
       "dimensions": "尺寸",
       "weight": "重量",
-      "certification": "认证"
+      "certification": "认证",
+      "origin": "产地"
     },
     "items": {
       "p1": {
@@ -386,6 +415,93 @@
         "longDescription": "Makita STST19405 大容量工业工具箱，坚固耐用，适合仓储物流与现场作业携带。多层分隔设计，工具分类存放；高强度锁扣，运输安全。适合工程团队及工厂维修部门批量采购。",
         "specs": { "voltage": "—", "power": "—", "material": "PP + ABS 复合材质", "dimensions": "495 × 396 × 251 mm", "weight": "4.8 kg", "certification": "CE, Makita 原厂" }
       }
+    }
+  },
+  "inquiry": {
+    "title": "产品询价",
+    "subtitle": "填写以下信息，我们将尽快为您提供报价方案",
+    "successTitle": "提交成功",
+    "successMessage": "您的询价已提交，我们将在24小时内联系您。",
+    "submit": "提交询价",
+    "cancel": "取消",
+    "close": "关闭",
+    "fields": {
+      "companyName": "公司名称",
+      "contactName": "联系人",
+      "email": "邮箱",
+      "whatsapp": "WhatsApp",
+      "country": "国家",
+      "productName": "产品名称",
+      "productModel": "产品型号",
+      "quantity": "采购数量",
+      "notes": "备注"
+    },
+    "placeholders": {
+      "companyName": "请输入公司名称",
+      "contactName": "请输入联系人姓名",
+      "email": "your@email.com",
+      "whatsapp": "+62 xxx xxxx xxxx",
+      "country": "例如：Indonesia",
+      "quantity": "例如：100 件",
+      "notes": "请补充规格、交期或其他需求..."
+    },
+    "errors": {
+      "required": "此项为必填"
+    }
+  },
+  "procurementAssistant": {
+    "title": "AI 采购助手",
+    "fabLabel": "AI 采购助手",
+    "start": "开始",
+    "skip": "跳过",
+    "confirm": "确认提交",
+    "confirmGenerate": "生成正式报价 & PDF",
+    "modifyOrder": "修改订单",
+    "uploadPo": "上传采购单",
+    "close": "关闭",
+    "submitting": "处理中...",
+    "successTitle": "谢谢。",
+    "successMessage": "我们的团队将尽快通过 WhatsApp 与您联系。",
+    "quotationReady": "正式报价已生成。",
+    "downloadPdf": "下载 PDF 报价单",
+    "sendWhatsApp": "通过 WhatsApp 发送",
+    "emailSent": "PDF 已发送至您的邮箱。",
+    "parseIntro": "已解析您的采购需求：",
+    "parseProducts": "识别产品",
+    "parseQuantity": "数量",
+    "parsePrice": "产品总价",
+    "parseShipping": "运费估算",
+    "parseTotal": "报价总额（CIF）",
+    "parseDays": "天发货",
+    "errorMessage": "处理失败，请稍后重试。",
+    "steps": {
+      "welcome": "您好！我是速采云 AI 采购助手。\n\n请粘贴完整采购需求，例如：\nBosch GWS750-100 ×20\nMakita 9557NB ×10\n送到 Morowali\nCIF\n7天内发货",
+      "order": "请粘贴完整订单（产品、数量、目的城市、CIF/FOB、交期）：",
+      "company": "您的公司名称？",
+      "contactName": "联系人姓名？",
+      "whatsapp": "您的 WhatsApp 号码？",
+      "email": "您的邮箱？（可选，用于自动发送 PDF）",
+      "confirmIntro": "请确认以下报价："
+    },
+    "placeholders": {
+      "order": "Bosch GWS750-100 ×20\nMakita 9557NB ×10\n送到 Morowali\nCIF\n7天内发货",
+      "company": "例如：PT Example",
+      "contactName": "例如：张三",
+      "whatsapp": "+62 xxx xxxx xxxx",
+      "email": "your@email.com"
+    },
+    "labels": {
+      "productName": "产品名称",
+      "quantity": "数量",
+      "destinationCity": "目的城市",
+      "company": "公司",
+      "contactName": "联系人",
+      "whatsapp": "WhatsApp",
+      "email": "邮箱",
+      "message": "留言"
+    },
+    "errors": {
+      "required": "请填写此项"
     }
   }
 }

@@ -8,7 +8,11 @@ import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./language-switcher";
 import { NavLink } from "./nav-link";
 import { WhatsAppButton } from "./whatsapp-button";
+import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { useSiteSettings } from "@/components/providers/site-settings-provider";
+import { GetQuoteButton } from "@/components/layout/get-quote-button";
+import { BrandName } from "@/components/layout/brand-name";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -35,6 +39,7 @@ function navigate(href: string, onClick?: () => void) {
 export function Header() {
   const t = useTranslations("nav");
   const locale = useLocale();
+  const settings = useSiteSettings();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -85,12 +90,16 @@ export function Header() {
               scrolled ? "h-11 w-11" : "h-12 w-12",
             )}
           >
-            <Cloud
-              className={cn(
-                "text-white transition-all duration-300",
-                scrolled ? "h-6 w-6" : "h-7 w-7",
-              )}
-            />
+            {settings.logo ? (
+              <span className="text-sm font-bold text-white">{settings.logo}</span>
+            ) : (
+              <Cloud
+                className={cn(
+                  "text-white transition-all duration-300",
+                  scrolled ? "h-6 w-6" : "h-7 w-7",
+                )}
+              />
+            )}
           </div>
           <span
             className={cn(
@@ -98,13 +107,7 @@ export function Header() {
               scrolled ? "text-xl" : "text-2xl",
             )}
           >
-            {locale === "zh" ? (
-              <span className="text-gradient">速采云</span>
-            ) : (
-              <>
-                Su<span className="text-gradient">Cai</span> Cloud
-              </>
-            )}
+            <BrandName siteName={settings.siteName} locale={locale} />
           </span>
         </a>
 
@@ -119,10 +122,10 @@ export function Header() {
         <div className="hidden items-center gap-2.5 lg:flex">
           <LanguageSwitcher />
           <WhatsAppButton />
-          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-            {t("login")}
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
+            <Link href="/contact">{t("contactUs")}</Link>
           </Button>
-          <Button size="sm">{t("register")}</Button>
+          <GetQuoteButton size="sm" />
         </div>
 
         <div className="flex items-center gap-2 sm:gap-2.5 lg:hidden">
@@ -181,12 +184,16 @@ export function Header() {
                 <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-4">
                   <WhatsAppButton className="w-full" />
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="flex-1">
-                      {t("login")}
+                    <Button variant="outline" size="sm" className="flex-1" asChild>
+                      <Link href="/contact" onClick={() => setMobileOpen(false)}>
+                        {t("contactUs")}
+                      </Link>
                     </Button>
-                    <Button size="sm" className="flex-1">
-                      {t("register")}
-                    </Button>
+                    <GetQuoteButton
+                      size="sm"
+                      className="flex-1"
+                      onAfterClick={() => setMobileOpen(false)}
+                    />
                   </div>
                 </div>
               </nav>

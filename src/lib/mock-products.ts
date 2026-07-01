@@ -15,17 +15,6 @@ export const mockProducts: MockProduct[] = [
   { id: "p12", slug: "makita-tool-box-stst19405", sku: "SC-LG-001", categoryId: "logistics", brandId: "makita", model: "STST19405", moq: 10, stockStatus: "inStock", location: "ningbo", price: 450, hotScore: 670, sortOrder: 1, updatedAt: "2026-05-10", imageCount: 4 },
 ];
 
-export function getBrandLabel(brandId: string): string {
-  const labels: Record<string, string> = {
-    bosch: "Bosch",
-    makita: "Makita",
-    schneider: "Schneider",
-    abb: "ABB",
-    skf: "SKF",
-  };
-  return labels[brandId] ?? brandId;
-}
-
 export function getProductBySlug(slug: string): MockProduct | undefined {
   return mockProducts.find((p) => p.slug === slug);
 }

@@ -1,6 +1,4 @@
-import type { productCategories } from "./data";
-
-export type CategoryId = (typeof productCategories)[number]["id"];
+export type CategoryId = string;
 
 export type StockStatus = "inStock" | "preOrder";
 
@@ -8,10 +6,19 @@ export type ShipLocation = "shenzhen" | "guangzhou" | "yiwu" | "ningbo" | "shang
 
 export type SortOption = "newest" | "hot";
 
+export interface ProductImageItem {
+  id: string;
+  url: string;
+  alt?: string | null;
+  sortOrder: number;
+}
+
 export interface MockProduct {
   id: string;
   slug: string;
   sku: string;
+  /** Present when loaded from Prisma; mock catalog uses i18n keys by id instead */
+  name?: string;
   categoryId: CategoryId;
   brandId: string;
   model: string;
@@ -23,9 +30,9 @@ export interface MockProduct {
   sortOrder: number;
   updatedAt: string;
   imageCount: number;
+  images?: ProductImageItem[];
+  primaryImageUrl?: string | null;
 }
-
-export const sidebarBrands = ["bosch", "makita", "schneider", "abb", "skf"] as const;
 
 export const sortOptions: SortOption[] = ["newest", "hot"];
 

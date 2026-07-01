@@ -1,0 +1,459 @@
+// Prisma schema — V2 Phase 1 (PostgreSQL)
+// Not wired to frontend yet; LocalStorage remains the runtime data source.
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  admin
+  staff
+}
+
+enum StockStatus {
+  inStock
+  preOrder
+}
+
+enum ShipLocation {
+  shenzhen
+  guangzhou
+  yiwu
+  ningbo
+  shanghai
+}
+
+enum InquiryStatus {
+  pending
+  contacted
+  quoted
+  completed
+  closed
+}
+
+enum InquirySource {
+  product
+  contact
+}
+
+enum QuotationStatus {
+  draft
+  sent
+  accepted
+  rejected
+  expired
+}
+
+enum AiConversationStatus {
+  active
+  completed
+  abandoned
+}
+
+enum OrderStatus {
+  pending
+  confirmed
+  processing
+  shipped
+  delivered
+  completed
+  cancelled
+}
+
+enum PaymentStatus {
+  unpaid
+  partial
+  paid
+  refunded
+}
+
+/// Admin / staff accounts (future auth replacement)
+model User {
+  id           String   @id @default(cuid())
+  username     String   @unique @db.VarChar(64)
+  passwordHash String   @map("password_hash") @db.VarChar(255)
+  role         UserRole @default(admin)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  slug      String   @unique @db.VarChar(64)
+  name      String   @db.VarChar(128)
+  icon      String   @default("Package") @db.VarChar(64)
+  sortOrder Int      @default(0) @map("sort_order")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  products Product[]
+
+  @@index([sortOrder])
+  @@map("categories")
+}
+
+model Brand {
+  id        String   @id @default(cuid())
+  slug      String   @unique @db.VarChar(64)
+  name      String   @db.VarChar(128)
+  color     String   @default("#0050B5") @db.VarChar(16)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  products Product[]
+
+  @@map("brands")
+}
+
+model Product {
+  id          String       @id @default(cuid())
+  slug        String       @unique @db.VarChar(128)
+  sku         String       @unique @db.VarChar(64)
+  name        String       @db.VarChar(256)
+  model       String       @db.VarChar(128)
+  moq         Int          @default(1)
+  stockStatus StockStatus  @default(inStock) @map("stock_status")
+  location    ShipLocation @default(shenzhen)
+  price       Decimal      @db.Decimal(12, 2)
+  hotScore    Int          @default(0) @map("hot_score")
+  sortOrder   Int          @default(0) @map("sort_order")
+  imageCount  Int          @default(0) @map("image_count")
+  categoryId  String       @map("category_id")
+  brandId     String       @map("brand_id")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  category  Category       @relation(fields: [categoryId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  brand     Brand          @relation(fields: [brandId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  images          ProductImage[]
+  inquiries       Inquiry[]
+  quotationItems  QuotationItem[]
+  supplierProducts SupplierProduct[]
+  orderItems       OrderItem[]
+
+  @@index([categoryId])
+  @@index([brandId])
+  @@index([stockStatus])
+  @@index([sortOrder])
+  @@index([hotScore])
+  @@map("products")
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  productId String   @map("product_id")
+  url       String   @db.VarChar(512)
+  alt       String?  @db.VarChar(256)
+  sortOrder Int      @default(0) @map("sort_order")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@index([productId, sortOrder])
+  @@map("product_images")
+}
+
+model Inquiry {
+  id           String        @id @default(cuid())
+  companyName  String        @map("company_name") @db.VarChar(256)
+  contactName  String        @map("contact_name") @db.VarChar(128)
+  email        String        @default("") @db.VarChar(256)
+  whatsapp     String        @db.VarChar(64)
+  country      String        @default("") @db.VarChar(128)
+  productName  String        @default("") @map("product_name") @db.VarChar(256)
+  productModel String        @default("") @map("product_model") @db.VarChar(128)
+  quantity     String        @default("") @db.VarChar(64)
+  notes        String        @default("") @db.Text
+  productSlug  String?       @map("product_slug") @db.VarChar(128)
+  source       InquirySource @default(contact)
+  status       InquiryStatus @default(pending)
+  productId    String?       @map("product_id")
+  customerId   String?       @map("customer_id")
+  submittedAt  DateTime      @default(now()) @map("submitted_at")
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+
+  product   Product?  @relation(fields: [productId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  customer  Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  quotations Quotation[]
+
+  @@index([productId])
+  @@index([customerId])
+  @@index([status])
+  @@index([source])
+  @@index([submittedAt])
+  @@map("inquiries")
+}
+
+/// Site-wide settings (singleton row keyed by `key`, e.g. "general")
+model Setting {
+  id           String   @id @default(cuid())
+  key          String   @unique @default("general") @db.VarChar(64)
+  siteName     String   @map("site_name") @db.VarChar(256)
+  logo         String   @default("") @db.VarChar(256)
+  contactEmail String   @map("contact_email") @db.VarChar(256)
+  whatsapp     String   @default("") @db.VarChar(64)
+  address      String   @default("") @db.Text
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}
+
+model Quotation {
+  id              String          @id @default(cuid())
+  quotationNo     String          @unique @map("quotation_no") @db.VarChar(32)
+  companyName     String          @map("company_name") @db.VarChar(256)
+  contactName     String          @map("contact_name") @db.VarChar(128)
+  email           String          @default("") @db.VarChar(256)
+  whatsapp        String          @db.VarChar(64)
+  country         String          @default("Indonesia") @db.VarChar(128)
+  destinationCity String          @default("") @map("destination_city") @db.VarChar(128)
+  inquiryId       String?         @map("inquiry_id")
+  customerId      String?         @map("customer_id")
+  subtotal        Decimal         @db.Decimal(14, 2)
+  total           Decimal         @db.Decimal(14, 2)
+  currency        String          @default("USD") @db.VarChar(8)
+  terms           String          @default("") @db.Text
+  notes           String          @default("") @db.Text
+  status          QuotationStatus @default(draft)
+  incoterms       String          @default("") @db.VarChar(16)
+  deliveryDays    Int?            @map("delivery_days")
+  shippingCost    Decimal         @default(0) @map("shipping_cost") @db.Decimal(14, 2)
+  validUntil      DateTime?       @map("valid_until")
+  pdfPath         String          @default("") @map("pdf_path") @db.VarChar(512)
+  parentId        String?         @map("parent_id")
+  revision        Int             @default(1)
+  createdAt       DateTime        @default(now()) @map("created_at")
+  updatedAt       DateTime        @updatedAt @map("updated_at")
+
+  inquiry       Inquiry?         @relation(fields: [inquiryId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  customer      Customer?        @relation(fields: [customerId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  parent        Quotation?       @relation("QuotationRevisions", fields: [parentId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  revisions     Quotation[]      @relation("QuotationRevisions")
+  items         QuotationItem[]
+  conversations AiConversation[]
+  orders        Order[]
+
+  @@index([inquiryId])
+  @@index([customerId])
+  @@index([parentId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("quotations")
+}
+
+enum AiDealStatus {
+  pending
+  quoted
+  won
+  lost
+}
+
+model AiConversation {
+  id                   String               @id @default(cuid())
+  sessionKey           String               @unique @map("session_key") @db.VarChar(64)
+  locale               String               @default("id") @db.VarChar(8)
+  status               AiConversationStatus @default(active)
+  state                Json                 @default("{}")
+  companyName          String               @default("") @map("company_name") @db.VarChar(256)
+  contactName          String               @default("") @map("contact_name") @db.VarChar(128)
+  whatsapp             String               @default("") @db.VarChar(64)
+  email                String               @default("") @db.VarChar(256)
+  country              String               @default("") @db.VarChar(128)
+  port                 String               @default("") @db.VarChar(128)
+  destinationCity      String               @default("") @map("destination_city") @db.VarChar(128)
+  incoterms            String               @default("") @db.VarChar(16)
+  deliveryDays         Int?                 @map("delivery_days")
+  quotationId          String?              @map("quotation_id")
+  dealStatus           AiDealStatus         @default(pending) @map("deal_status")
+  grossProfit          Decimal?             @map("gross_profit") @db.Decimal(14, 2)
+  recommendedSuppliers Json?                @map("recommended_suppliers")
+  createdAt            DateTime             @default(now()) @map("created_at")
+  updatedAt            DateTime             @updatedAt @map("updated_at")
+
+  quotation Quotation?  @relation(fields: [quotationId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  messages  AiMessage[]
+  uploads   AiUpload[]
+
+  @@index([status])
+  @@index([dealStatus])
+  @@index([createdAt])
+  @@index([destinationCity])
+  @@map("ai_conversations")
+}
+
+model AiUpload {
+  id             String   @id @default(cuid())
+  conversationId String   @map("conversation_id")
+  fileName       String   @map("file_name") @db.VarChar(512)
+  fileType       String   @map("file_type") @db.VarChar(16)
+  fileSize       Int      @map("file_size")
+  storagePath    String   @map("storage_path") @db.VarChar(1024)
+  parsedLineCount Int     @default(0) @map("parsed_line_count")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  conversation AiConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@index([conversationId])
+  @@map("ai_uploads")
+}
+
+model AiMessage {
+  id             String   @id @default(cuid())
+  conversationId String   @map("conversation_id")
+  role           String   @db.VarChar(16)
+  content        String   @db.Text
+  metadata       Json?
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  conversation AiConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@index([conversationId, createdAt])
+  @@map("ai_messages")
+}
+
+model QuotationItem {
+  id           String  @id @default(cuid())
+  quotationId  String  @map("quotation_id")
+  productId    String? @map("product_id")
+  productName  String  @map("product_name") @db.VarChar(256)
+  productModel String  @default("") @map("product_model") @db.VarChar(128)
+  quantity     Int     @default(1)
+  unitPrice    Decimal @map("unit_price") @db.Decimal(12, 2)
+  subtotal     Decimal @db.Decimal(14, 2)
+  sortOrder    Int     @default(0) @map("sort_order")
+
+  quotation Quotation @relation(fields: [quotationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  product   Product?  @relation(fields: [productId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  @@index([quotationId])
+  @@index([productId])
+  @@map("quotation_items")
+}
+
+model Supplier {
+  id            String   @id @default(cuid())
+  companyName   String   @map("company_name") @db.VarChar(256)
+  contactName   String   @default("") @map("contact_name") @db.VarChar(128)
+  whatsapp      String   @default("") @db.VarChar(64)
+  email         String   @default("") @db.VarChar(256)
+  address       String   @default("") @db.Text
+  city          String   @default("") @db.VarChar(128)
+  country       String   @default("") @db.VarChar(128)
+  paymentTerms  String   @default("") @map("payment_terms") @db.VarChar(256)
+  leadTime      Int      @default(0) @map("lead_time")
+  rating        Decimal  @default(0) @db.Decimal(3, 1)
+  notes         String   @default("") @db.Text
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  products SupplierProduct[]
+  orders   Order[]
+
+  @@index([companyName])
+  @@index([country, city])
+  @@map("suppliers")
+}
+
+model SupplierProduct {
+  supplierId    String  @map("supplier_id")
+  productId     String  @map("product_id")
+  purchasePrice Decimal @map("purchase_price") @db.Decimal(12, 2)
+  moq           Int     @default(1)
+  stock         Int     @default(0)
+  leadTime      Int     @default(0) @map("lead_time")
+  preferred     Boolean @default(false)
+
+  supplier Supplier @relation(fields: [supplierId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  product  Product  @relation(fields: [productId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@id([supplierId, productId])
+  @@index([productId])
+  @@index([productId, preferred])
+  @@map("supplier_products")
+}
+
+model Customer {
+  id          String   @id @default(cuid())
+  companyName String   @map("company_name") @db.VarChar(256)
+  contactName String   @default("") @map("contact_name") @db.VarChar(128)
+  email       String   @default("") @db.VarChar(256)
+  whatsapp    String   @default("") @db.VarChar(64)
+  phone       String   @default("") @db.VarChar(64)
+  country     String   @default("") @db.VarChar(128)
+  city        String   @default("") @db.VarChar(128)
+  address     String   @default("") @db.Text
+  taxNumber   String?  @map("tax_number") @db.VarChar(64)
+  notes       String   @default("") @db.Text
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  inquiries   Inquiry[]
+  quotations  Quotation[]
+  orders      Order[]
+
+  @@index([companyName])
+  @@index([contactName])
+  @@index([whatsapp])
+  @@index([email])
+  @@map("customers")
+}
+
+model Order {
+  id             String        @id @default(cuid())
+  orderNo        String        @unique @map("order_no") @db.VarChar(32)
+  customerId     String        @map("customer_id")
+  quotationId    String?       @unique @map("quotation_id")
+  supplierId     String?       @map("supplier_id")
+  subtotal       Decimal       @db.Decimal(14, 2)
+  shippingCost   Decimal       @default(0) @map("shipping_cost") @db.Decimal(14, 2)
+  total          Decimal       @db.Decimal(14, 2)
+  currency       String        @default("USD") @db.VarChar(8)
+  paymentStatus  PaymentStatus @default(unpaid) @map("payment_status")
+  orderStatus    OrderStatus   @default(pending) @map("order_status")
+  trackingNo     String        @default("") @map("tracking_no") @db.VarChar(128)
+  shippingMethod String        @default("") @map("shipping_method") @db.VarChar(128)
+  eta            DateTime?     @map("eta")
+  notes          String        @default("") @db.Text
+  createdAt      DateTime      @default(now()) @map("created_at")
+  updatedAt      DateTime      @updatedAt @map("updated_at")
+
+  customer  Customer    @relation(fields: [customerId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  quotation Quotation?  @relation(fields: [quotationId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  supplier  Supplier?   @relation(fields: [supplierId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  items     OrderItem[]
+
+  @@index([customerId])
+  @@index([supplierId])
+  @@index([orderStatus])
+  @@index([paymentStatus])
+  @@index([createdAt])
+  @@map("orders")
+}
+
+model OrderItem {
+  id            String  @id @default(cuid())
+  orderId       String  @map("order_id")
+  productId     String? @map("product_id")
+  productName   String  @default("") @map("product_name") @db.VarChar(256)
+  quantity      Int     @default(1)
+  purchasePrice Decimal @default(0) @map("purchase_price") @db.Decimal(12, 2)
+  sellingPrice  Decimal @map("selling_price") @db.Decimal(12, 2)
+  subtotal      Decimal @db.Decimal(14, 2)
+
+  order   Order    @relation(fields: [orderId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  product Product? @relation(fields: [productId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  @@index([orderId])
+  @@index([productId])
+  @@map("order_items")
+}

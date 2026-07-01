@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { resolveHtmlLang } from "@/lib/i18n/resolve-html-lang";
+import { defaultSiteMetadata, getSiteBaseUrl } from "@/lib/seo/metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sucaicloud.com"),
+  ...defaultSiteMetadata,
+  metadataBase: new URL(getSiteBaseUrl()),
   title: {
     default: "速采云 SuCai Cloud",
     template: "%s | 速采云 SuCai Cloud",
@@ -20,16 +23,17 @@ export const metadata: Metadata = {
   authors: [{ name: "SuCai Cloud" }],
   creator: "SuCai Cloud",
   openGraph: {
+    ...defaultSiteMetadata.openGraph,
     type: "website",
     locale: "zh_CN",
     alternateLocale: ["en_US", "id_ID"],
-    url: "https://sucaicloud.com",
+    url: getSiteBaseUrl(),
     siteName: "速采云 SuCai Cloud",
     title: "速采云 - 一站式工业用品采购平台",
     description: "连接中国供应商与印尼企业采购",
   },
   twitter: {
-    card: "summary_large_image",
+    ...defaultSiteMetadata.twitter,
     title: "速采云 SuCai Cloud",
     description: "一站式工业用品采购平台",
   },
@@ -39,13 +43,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await resolveHtmlLang();
+
   return (
-    <html lang="zh" className="dark" suppressHydrationWarning>
+    <html lang={locale} className="dark" suppressHydrationWarning>
       <body className="font-sans antialiased">
         {children}
       </body>

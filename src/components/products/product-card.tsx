@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 import { MapPin, MessageSquareQuote } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ProductPlaceholder } from "@/components/home/product-placeholder";
-import { getBrandLabel } from "@/lib/mock-products";
+import { ProductThumbnail } from "@/components/products/product-thumbnail";
+import { useInquiry } from "@/components/inquiry/inquiry-provider";
+import { resolveProductName } from "@/lib/products/product-display";
 import type { MockProduct } from "@/lib/product-types";
 import { cn } from "@/lib/utils";
 
 interface ProductCardProps {
   product: MockProduct;
-  index?: number;
+  brandLabels: Record<string, string>;
 }
 
 const stockTextStyles = {
@@ -19,22 +20,22 @@ const stockTextStyles = {
   preOrder: "text-blue-400",
 } as const;
 
-export function ProductCard({ product, index = 0 }: ProductCardProps) {
+export function ProductCard({ product, brandLabels }: ProductCardProps) {
   const t = useTranslations("productsPage");
-  const name = t(`items.${product.id}.name`);
+  const { openInquiry } = useInquiry();
+  const name = resolveProductName(product, (id) => t(`items.${id}.name`));
   const href = `/products/${product.slug}`;
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, delay: index * 0.04 }}
+      initial={false}
       whileHover={{ y: -8 }}
       className="group"
     >
       <div className="glass-card flex h-full flex-col overflow-hidden transition-all duration-300 hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10">
         <Link href={href} className="block">
-          <ProductPlaceholder
+          <ProductThumbnail
+            imageUrl={product.primaryImageUrl}
             label={name}
             className="aspect-[4/3] transition-transform duration-500 group-hover:scale-[1.04]"
           />
@@ -51,7 +52,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             <div className="flex justify-between gap-2">
               <dt className="text-muted-foreground">{t("card.brand")}</dt>
               <dd className="truncate font-medium text-orange-400">
-                {getBrandLabel(product.brandId)}
+                {brandLabels[product.brandId] ?? product.brandId}
               </dd>
             </div>
             <div className="flex justify-between gap-2">
@@ -73,13 +74,20 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             </div>
           </dl>
 
-          <Link
-            href={href}
+          <button
+            type="button"
+            onClick={() =>
+              openInquiry({
+                productName: name,
+                productModel: product.model,
+                productSlug: product.slug,
+              })
+            }
             className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-4 py-2 text-sm font-medium text-white shadow-md shadow-orange-500/20 transition-all hover:from-orange-400 hover:to-amber-400 hover:shadow-lg hover:shadow-orange-500/30"
           >
             <MessageSquareQuote className="h-4 w-4" />
             {t("card.inquiry")}
-          </Link>
+          </button>
         </div>
       </div>
     </motion.article>

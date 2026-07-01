@@ -11,7 +11,6 @@ import {
   type AiMessageRecord,
   type AiMessageRole,
 } from "@/lib/ai/ai-types";
-import { getDbConnected } from "@/lib/db/db-availability";
 import { prisma } from "@/lib/prisma";
 
 const memoryConversations = new Map<string, AiConversationRecord>();
@@ -24,13 +23,17 @@ function allowMemoryFallback(): boolean {
 
 async function isDbAvailable(): Promise<boolean> {
   if (!process.env.DATABASE_URL) return false;
-  if (!(await getDbConnected())) return false;
-  try {
-    await prisma.aiConversation.findFirst({ select: { id: true } });
-    return true;
-  } catch {
-    return false;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      await prisma.$queryRaw`SELECT 1`;
+      return true;
+    } catch {
+      if (attempt < 2) {
+        await new Promise((resolve) => setTimeout(resolve, 250 * (attempt + 1)));
+      }
+    }
   }
+  return false;
 }
 
 async function shouldUseMemoryStore(): Promise<boolean> {

@@ -3,6 +3,7 @@
 import type { AiAgentReply, AiConversationRecord } from "@/lib/ai/ai-types";
 
 const SESSION_KEY = "sucai-ai-session";
+const CONVERSATION_ID_KEY = "sucai-ai-conversation-id";
 
 export function getAiSessionKey(): string {
   if (typeof window === "undefined") return "";
@@ -17,19 +18,45 @@ export function getAiSessionKey(): string {
 export function resetAiSession(): string {
   const key = crypto.randomUUID();
   localStorage.setItem(SESSION_KEY, key);
+  localStorage.removeItem(CONVERSATION_ID_KEY);
   return key;
 }
 
+export function getStoredConversationId(): string | null {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem(CONVERSATION_ID_KEY);
+}
+
+function storeConversationId(id: string) {
+  if (typeof window !== "undefined") {
+    localStorage.setItem(CONVERSATION_ID_KEY, id);
+  }
+}
+
 export async function startAiConversation(locale: string): Promise<AiConversationRecord> {
+  const storedId = getStoredConversationId();
+  if (storedId) {
+    try {
+      const existing = await fetchAiConversation(storedId);
+      storeConversationId(existing.id);
+      return existing;
+    } catch {
+      localStorage.removeItem(CONVERSATION_ID_KEY);
+    }
+  }
+
   const res = await fetch("/api/ai/conversations", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ sessionKey: getAiSessionKey(), locale }),
   });
   if (!res.ok) {
-    throw new Error("Failed to start conversation");
+    const body = (await res.json().catch(() => null)) as { error?: string } | null;
+    throw new Error(body?.error ?? "Failed to start conversation");
   }
-  return (await res.json()) as AiConversationRecord;
+  const conversation = (await res.json()) as AiConversationRecord;
+  storeConversationId(conversation.id);
+  return conversation;
 }
 
 export async function fetchAiConversation(id: string): Promise<AiConversationRecord> {

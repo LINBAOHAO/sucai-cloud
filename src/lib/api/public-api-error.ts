@@ -8,6 +8,7 @@ export function publicApiError(error: unknown, fallback: string): string {
   if (message.includes("Can't reach database server")) return fallback;
   if (message.startsWith("Product not found")) return message;
   if (message.startsWith("No products detected")) return message;
+  if (message.includes("Database unavailable")) return message;
   if (message.length > 200) return fallback;
   return message;
 }

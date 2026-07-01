@@ -31,6 +31,7 @@ export type AiPendingField =
   | "country"
   | "port"
   | "destinationCity"
+  | "shippingMethod"
   | "incoterms"
   | "companyName"
   | "contactName"
@@ -86,6 +87,7 @@ export interface AiConversationState {
   country: string;
   port: string;
   destinationCity: string;
+  shippingMethod?: string;
   incoterms: string;
   deliveryDays: number | null;
   companyName: string;
@@ -93,6 +95,9 @@ export interface AiConversationState {
   whatsapp: string;
   email: string;
   phase: AiConversationPhase;
+  quoteRequested?: boolean;
+  portAsked?: boolean;
+  procurementAcknowledged?: boolean;
   lastIntent?: AiIntent;
   pendingField?: AiPendingField;
   pendingAmbiguous?: PendingAmbiguousMatch;
@@ -215,7 +220,11 @@ export function parseConversationState(raw: unknown): AiConversationState {
     country: value.country ?? "",
     port: value.port ?? "",
     destinationCity: value.destinationCity ?? "",
+    shippingMethod: value.shippingMethod ?? "",
     incoterms: value.incoterms ?? "",
+    quoteRequested: value.quoteRequested ?? false,
+    portAsked: value.portAsked ?? false,
+    procurementAcknowledged: value.procurementAcknowledged ?? false,
     deliveryDays: value.deliveryDays ?? null,
     companyName: value.companyName ?? "",
     contactName: value.contactName ?? "",

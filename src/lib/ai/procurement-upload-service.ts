@@ -170,6 +170,9 @@ export async function modifyAgentOrder(conversationId: string): Promise<AiAgentR
     phase: "gathering",
     quotePreview: undefined,
     pendingField: undefined,
+    quoteRequested: false,
+    procurementAcknowledged: false,
+    portAsked: false,
   };
 
   const locale = conversation.locale;
